@@ -14,10 +14,20 @@
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
 
 Route::get('/dumb', 'dummyController@fetch');
 Route::get('login', 'loginController@index');
-Route::get('login/admin', 'loginController@admin');
-=======
->>>>>>> 52c4f7d648dfb8487fd8c1278747b385a8c77741
+Route::post('login/admin', 'loginController@admin');
+
+Route::get('/accruangan','AccruanganController@showAccruangan');
+Route::get('/agenda','AgendaController@showAgenda');
+Route::get('/detaildosen','DetailDosenController@showDetailDosen');
+Route::get('/formlogin','FormLoginController@showFormLogin');
+Route::get('/formpinjam','FormPinjamController@showFormPinjam');
+Route::get('/indexadmin','IndexAdminController@showIndexAdmin');
+Route::get('/index','IndexController@showIndex');
+Route::get('/indexdosen','IndexDosenController@showIndexDosen');
+Route::get('/jadwal','JadwalController@showJadwal');
+Route::get('/lihatdosen','LihatDosenController@showLihatDosen');
+Route::get('/postagenda','PostAgendaController@showPostAgenda');
+Route::get('/poststatus','PostStatusController@showPostStatus');

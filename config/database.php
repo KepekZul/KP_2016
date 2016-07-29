@@ -56,13 +56,10 @@ return [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'localhost'),
             'port' => env('DB_PORT', '3306'),
-<<<<<<< HEAD
             'database' => env('DB_DATABASE', 'project_kp_2016'),
             'username' => env('DB_USERNAME', 'root'),
-=======
             'database' => env('DB_DATABASE', 'forge'),
             'username' => env('DB_USERNAME', 'forge'),
->>>>>>> 52c4f7d648dfb8487fd8c1278747b385a8c77741
             'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
