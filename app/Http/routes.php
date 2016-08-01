@@ -18,6 +18,11 @@ Route::get('/', function () {
 Route::get('/dumb', 'dummyController@fetch');
 Route::get('login', 'loginController@index');
 Route::post('login/admin', 'loginController@admin');
+Route::get('admin/index', 'adminController@index');
+Route::get('admin/accruangan', 'adminController@accRuangan');
+Route::get('admin/agenda', 'adminController@agenda');
+
+
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
 Route::get('/agenda','AgendaController@showAgenda');

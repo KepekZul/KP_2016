@@ -11,16 +11,13 @@ use DB;
 class loginController extends Controller
 {
     public function index(){
-    	return view('login');
+    	return view('formlogin');
     }
     public function admin(request $request){
     	$berhasil= DB::select('call loginAdmin(?,?)',array($request['id'], $request['pass']));
     	if($berhasil[0]->pesan==1){
-    		echo 'berhasil';
             $request->session()->put('username_admin',$request['id']);
-            $idsession = $request->session()->get('username_admin');
-            echo $idsession;
-            echo 'kakakka';
+            return redirect('admin/index');
     	}else{
     		echo 'gagal';
     	}
