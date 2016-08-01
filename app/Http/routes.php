@@ -21,6 +21,7 @@ Route::post('login/admin', 'loginController@admin');
 Route::get('admin/index', 'adminController@index');
 Route::get('admin/accruangan', 'adminController@accRuangan');
 Route::get('admin/agenda', 'adminController@agenda');
+Route::post('admin/isiAgenda', 'adminController@isiAgenda');
 
 
 
