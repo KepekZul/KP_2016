@@ -17,15 +17,14 @@ class adminController extends Controller
     	return view('accruangan');
     }
     public function agenda(Request $Request){
-    	echo $Request->session->get('username_admin');
     	return view('postagenda');
     }
     public function isiAgenda(Request $Request){
-    	echo $Request->session->get('username_admin');
     	$isi = $Request['isi'];
+    	$admin = $Request->session()->get('username_admin');
     	$mulai = $Request['mulai'];
     	$selesai = $Request['selesai'];
-    	//$pesan = DB::select('call isiAgenda(?,?,?,?)', $isi, $mulai, $Request->session->get('username_admin'), $selesai);
-    	//return view('postagenda');
+    	DB::select('call isiAgenda(?,?,?,?)', array($isi, $mulai, $admin, $selesai));
+    	return view('postagenda');
     }
 }
