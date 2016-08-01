@@ -14,7 +14,8 @@ class adminController extends Controller
     	return view('indexadmin');
     }
     public function accRuangan(){
-    	return view('accruangan');
+    	$listPermohonan = DB::select('select * from daftar_permohonan where status_permohonan = ?', ['Diproses']);
+    	return view('accruangan', ['listPermohonan'=>$listPermohonan]);
     }
     public function agenda(Request $Request){
     	return view('postagenda');

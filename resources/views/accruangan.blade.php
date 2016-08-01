@@ -43,15 +43,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($listPermohonan as $list)
                                     <tr>
-                                        <td>/index.html</td>
-                                        <td>1265</td>
-                                        <td>32.3%</td>
-                                        <td>$321.33</td>
-                                        <td><a href="#" class="btn btn-sm btn-primary">Lihat</a></td>
-                                        <td><a href="#" class="btn btn-sm btn-success">Setujui</a></td>
-                                        <td><a href="#" class="btn btn-sm btn-danger">Tolak</a></td>
+                                        <td>{{$list->nama_pemohon_peminjaman}}</td>
+                                        <td>{{$list->nama_kegiatan}}</td>
+                                        <td>{{$list->tanggal_mulai_permohonan_peminjaman}}</td>
+                                        <td>{{$list->nama_ruangan}}</td>
+                                        <td><a class="btn btn-sm btn-primary">Lihat</a></td>
+                                        <td><a class="btn btn-sm btn-success">Setujui</a></td>
+                                        <td><a class="btn btn-sm btn-danger">Tolak</a></td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
