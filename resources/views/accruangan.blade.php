@@ -49,9 +49,9 @@
                                         <td>{{$list->nama_kegiatan}}</td>
                                         <td>{{$list->tanggal_mulai_permohonan_peminjaman}}</td>
                                         <td>{{$list->nama_ruangan}}</td>
-                                        <td><a class="btn btn-sm btn-primary">Lihat</a></td>
-                                        <td><a class="btn btn-sm btn-success">Setujui</a></td>
-                                        <td><a class="btn btn-sm btn-danger">Tolak</a></td>
+                                        <td><a href="lihat"><button method="post" name="lihat" action="admin/lihat" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-primary">Lihat</button></a></td>
+                                        <td><button class="btn btn-sm btn-success">Setujui</a></td>
+                                        <td><button class="btn btn-sm btn-danger">Tolak</a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

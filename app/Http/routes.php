@@ -22,7 +22,7 @@ Route::get('admin/index', 'adminController@index');
 Route::get('admin/accruangan', 'adminController@accRuangan');
 Route::get('admin/agenda', 'adminController@agenda');
 Route::post('admin/isiAgenda', 'adminController@isiAgenda');
-
+Route::post('admin/lihat', 'adminController@lihat');
 
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
