@@ -49,9 +49,9 @@
                                         <td>{{$list->nama_kegiatan}}</td>
                                         <td>{{$list->tanggal_mulai_permohonan_peminjaman}}</td>
                                         <td>{{$list->nama_ruangan}}</td>
-                                        <td><a href="lihat"><button method="post" name="lihat" action="admin/lihat" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-primary">Lihat</button></a></td>
-                                        <td><button class="btn btn-sm btn-success">Setujui</a></td>
-                                        <td><button class="btn btn-sm btn-danger">Tolak</a></td>
+                                        <td><form method="post" action="lihat"><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-primary">Lihat</button></form></td>
+                                        <td><form method="post" action="acc"><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-success">Setujui</button></form></td>
+                                        <td><form method="post" action="tolak"><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-danger">Tolak</button></form></td>
                                     </tr>
                                     @endforeach
                                 </tbody>

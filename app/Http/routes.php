@@ -12,18 +12,21 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-
+//Login
 Route::get('/dumb', 'dummyController@fetch');
 Route::get('login', 'loginController@index');
 Route::post('login/admin', 'loginController@admin');
+
+//Admin
 Route::get('admin/index', 'adminController@index');
 Route::get('admin/accruangan', 'adminController@accRuangan');
 Route::get('admin/agenda', 'adminController@agenda');
 Route::post('admin/isiAgenda', 'adminController@isiAgenda');
 Route::post('admin/lihat', 'adminController@lihat');
-
+Route::post('admin/acc', 'adminController@acc');
+Route::post('admin/tolak', 'adminController@del');
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
 Route::get('/agenda','AgendaController@showAgenda');
