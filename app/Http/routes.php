@@ -46,3 +46,4 @@ Route::get('/jadwal','JadwalController@showJadwal');
 Route::get('/lihatdosen','LihatDosenController@showLihatDosen');
 Route::get('/postagenda','PostAgendaController@showPostAgenda');
 Route::get('/poststatus','PostStatusController@showPostStatus');
+Route::get('/logindosen','FormLoginDosenController@showFormLoginDosen');
