@@ -23,7 +23,13 @@
                         <a href="agenda">Post Agenda Jurusan</a>
                     </li>
                     <li>
+                        <a href="listagenda">Edit Agenda Jurusan</a>
+                    </li>
+                    <li>
                         <a href="accruangan">Permintaan Peminjaman Ruangan</a>
+                    </li>
+                    <li>
+                        <a href="tambahdosen">Tambah Data Dosen</a>
                     </li>
                 </ul>
             </div>

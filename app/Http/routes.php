@@ -27,6 +27,9 @@ Route::post('admin/isiAgenda', 'adminController@isiAgenda');
 Route::post('admin/lihat', 'adminController@lihat');
 Route::post('admin/acc', 'adminController@acc');
 Route::post('admin/tolak', 'adminController@del');
+Route::get('admin/listagenda','adminController@listagenda');
+Route::get('admin/editagenda','adminController@editagenda');
+Route::get('admin/tambahdosen','adminController@tambahdosen');
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
 Route::get('/agenda','AgendaController@showAgenda');

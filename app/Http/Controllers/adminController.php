@@ -40,4 +40,13 @@ class adminController extends Controller
         $pesan = DB::select('call tolakPermohonan(?,?)', array($request->session()->get('username_admin'), $request['kode_permohonan']));
         print_r($pesan);
     }
+    public function listagenda(Request $request){
+        return view('listagenda');
+    }
+    public function editagenda(Request $request){
+        return view('editagenda');
+    }
+    public function tambahdosen(Request $request){
+        return view('tambahdosen');
+    }
 }
