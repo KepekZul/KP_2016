@@ -57,7 +57,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="formlogin">LOG IN</a>
+                        <a href="formlogin">ADMIN</a>
+                    </li>
+                    <li>
+                        <a href="logindosen">DOSEN</a>
                     </li>
                 </ul>
             </div>
