@@ -4,7 +4,9 @@
 <head>
     @include('layouts.adminHead')
 </head>
-
+@if(Session::has('msg'))
+  {{Session::get('msg')}}
+@endif
 <body>
 
     <div id="wrapper">
