@@ -49,37 +49,42 @@
                                         <td>{{$list->nama_kegiatan}}</td>
                                         <td>{{$list->tanggal_mulai_permohonan_peminjaman}}</td>
                                         <td>{{$list->nama_ruangan}}</td>
-                                        <td><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#myModal">Lihat</button></td>
+                                        <td><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#Modal--{{$list->kode_permohonan}}">Lihat</button></td>
                                         <td><form method="post" action="acc"><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-success">Setujui</button></form></td>
                                         <td><form method="post" action="tolak"><button name="kode_permohonan" value="{{$list->kode_permohonan}}" class="btn btn-sm btn-danger">Tolak</button></form></td>
                                     </tr>
+                                        <div class="modal fade" id="Modal--{{$list->kode_permohonan}}" role="dialog">
+                                            <div class="modal-dialog">
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Modal Header</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <li>Atas nama: {{$list->nama_pemohon_peminjaman}}</li>
+                                                  <li>Kode permohonan: {{$list->kode_permohonan}}</li>
+                                                  <li>Nama kegiatan: {{$list->nama_kegiatan}}</li>
+                                                  <li>Tanggal mulai: {{$list->tanggal_mulai_permohonan_peminjaman}}</li>
+                                                  <li>Waktu mulai: {{$list->waktu_mulai_permohonan_peminjaman}}</li>
+                                                  <li>Waktu selesai: {{$list->waktu_selesai_permohonan_peminjaman}}</li>
+                                                  <li>Badan pelaksana: {{$list->badan_pelaksana_kegiatan}}</li>
+                                                  <li>Tiap {{$list->rutinitas_peminjaman}} hari</li>
+                                                  <li>Sebanyak {{$list->kali_peminjaman}} kali pinjam</li>
+                                                </div>
+                                                <div class="modal-footer">
+                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                </div>
+                                              </div>
+                                              
+                                            </div>
+                                          </div>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 <!-- /.row -->
-
-                <div class="modal fade" id="myModal" role="dialog">
-                    <div class="modal-dialog">
-                    
-                      <!-- Modal content-->
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                          <h4 class="modal-title">Modal Header</h4>
-                        </div>
-                        <div class="modal-body">
-                          <p>Some text in the modal.</p>
-                        </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                      </div>
-                      
-                    </div>
-                  </div>
-
             </div>
             <!-- /.container-fluid -->
 

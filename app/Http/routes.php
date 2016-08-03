@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 //Login
-Route::get('/dumb', 'dummyController@fetch');
 Route::get('login', 'loginController@index');
 Route::post('login/admin', 'loginController@admin');
 
@@ -30,6 +29,10 @@ Route::post('admin/tolak', 'adminController@del');
 Route::get('admin/listagenda','adminController@listagenda');
 Route::get('admin/editagenda','adminController@editagenda');
 Route::get('admin/tambahdosen','adminController@tambahdosen');
+
+//Dosen
+Route::get('dosen/index', 'dosenController@index');
+Route::get('dosen/post', 'dosenController@postStatus');
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
 Route::get('/agenda','AgendaController@showAgenda');
