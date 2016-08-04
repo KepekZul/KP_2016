@@ -94,17 +94,12 @@
                 </div>
             </div>
         </form>
-        </div>
-        @if(session::has('msg'))
+        @if(Session::has('msg'))
             <span style="background-color:red; color:white;">
-            {{session::get('msg')}}
+                {{Session::get('msg')}}
             </span>
         @endif
-        <!-- /c
-
-        <hr>
-
-        <!-- Footer -->
+        </div>
         
     </div>
     <div class="container center_div">
