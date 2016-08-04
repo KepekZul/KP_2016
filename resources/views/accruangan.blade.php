@@ -4,9 +4,6 @@
 <head>
     @include('layouts.adminHead')
 </head>
-@if(Session::has('msg'))
-  {{Session::get('msg')}}
-@endif
 <body>
 
     <div id="wrapper">
@@ -84,6 +81,11 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            @if(Session::has('msg'))
+                                <span style="background-color:red; color:white;">
+                                    {{Session::get('msg')}}
+                                </span>
+                            @endif
                         </div>
                     </div>
                 <!-- /.row -->

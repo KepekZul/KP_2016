@@ -57,10 +57,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="formlogin">ADMIN</a>
+                        <a href="login/admin">ADMIN</a>
                     </li>
                     <li>
-                        <a href="logindosen">DOSEN</a>
+                        <a href="login/dosen">DOSEN</a>
                     </li>
                 </ul>
             </div>

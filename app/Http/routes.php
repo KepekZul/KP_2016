@@ -15,8 +15,11 @@ Route::get('/', function () {
     return view('index');
 });
 //Login
-Route::get('login', 'loginController@index');
-Route::post('login/admin', 'loginController@admin');
+Route::get('login/dosen', 'loginController@dosen');
+Route::get('login/admin', 'loginController@admin');
+Route::post('login/loga', 'loginController@log1');
+Route::post('login/logd', 'loginController@log2');
+Route::get('logout', 'loginController@logout');
 
 //Admin
 Route::get('admin/index', 'adminController@index');

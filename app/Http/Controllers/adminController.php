@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -33,7 +35,7 @@ class adminController extends Controller
         if($pesan[0]->status==1)
         return redirect()->back();
         else{
-            $request->session()->flash('status', $pesan[0]->pesan);
+            session::flash('msg', $pesan[0]->pesan);
             return redirect()->back();
         }
     }

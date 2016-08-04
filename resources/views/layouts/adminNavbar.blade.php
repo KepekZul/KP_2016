@@ -10,7 +10,7 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li>
-                    <a href=" "><strong>LOG OUT</strong></a>
+                    <a href="/logout"><strong>LOG OUT</strong></a>
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->

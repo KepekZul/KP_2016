@@ -39,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index">Home</a>
+                <a class="navbar-brand" href="/index">Home</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -57,10 +57,10 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="formlogin">ADMIN</a>
+                        <a href="/login/admin">ADMIN</a>
                     </li>
                     <li>
-                        <a href="logindosen">DOSEN</a>
+                        <a href="/login/dosen">DOSEN</a>
                     </li>
                 </ul>
             </div>
@@ -73,10 +73,10 @@
     <!--<div class="container center_div">-->
     <div class="container center_div">
         <div class="row text-center">
-        <form action="login/admin" method="post">
+        <form action="logd" method="post">
             <div class="col-xs-3 col-centered" style="float:relative">
                 <div class="thumbnail">
-                    <img style="width:200px;height:200px" src="img/user.png" alt="">
+                    <img style="width:200px;height:200px" src="../img/user.png" alt="">
                     <div class="caption">
                         <h3>LOGIN</h3>
                         <input type="text" name="id" id="id" class="form-control" placeholder="ID" required autofocus>
@@ -94,6 +94,11 @@
                 </div>
             </div>
         </form>
+        @if(Session::has('msg'))
+            <span style="background-color:red; color:white;">
+                {{Session::get('msg')}}
+            </span>
+        @endif
         </div>
         <!-- /c
 
