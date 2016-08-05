@@ -64,7 +64,7 @@ class adminController extends Controller
         return view('tambahdosen');
     }
     public function add(Request $request){
-        DB::select('call tambahDosen(?,?,?)', array($request['nama'],$request['nidn'],$request['pass']));
+        DB::select('call tambahDosen(?,?,?,?)', array($request['nama'],$request['nidn'],$request['pass']),$request->session()->get('username_admin'));
         return redirect()->back();
     }
 }
