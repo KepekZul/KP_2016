@@ -32,15 +32,15 @@
                         <form role="form" action="isiAgenda" method="POST">
                             <h4>Tanggal Mulai:</h4>
                             <div class="form-group">
-                                <input type="date" name="mulai" class="form-control">
+                                <input type="date" name="mulai" class="form-control" value="{{$data[0]->tanggal_mulai_agenda}}">
                             </div>
                             <h4>Tanggal Selesai:</h4>
                             <div class="form-group">
-                                <input type="date" name="selesai" class="form-control">
+                                <input type="date" name="selesai" class="form-control" value="{{$data[0]->tanggal_selesai_agenda}}">
                             </div>
                             <h4>Isi Agenda:</h4>
                             <div class="form-group">
-                                <textarea rows="5" name="isi" class="form-control"></textarea>
+                                <textarea rows="5" name="isi" class="form-control" value="{{$data[0]->isi_agenda}}"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Ubah</button>
                         </form>

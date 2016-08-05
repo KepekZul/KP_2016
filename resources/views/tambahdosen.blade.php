@@ -29,7 +29,7 @@
 
                 <div class="row">
                     <div class="well">
-                        <form role="form" action="isiAgenda" method="POST">
+                        <form role="form" action="add" method="POST">
                             <h4>Nama Dosen:</h4>
                             <div class="form-group">
                                 <input type="text" name="nama" class="form-control">

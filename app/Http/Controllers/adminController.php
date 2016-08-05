@@ -43,13 +43,19 @@ class adminController extends Controller
         $pesan = DB::select('call tolakPermohonan(?,?)', array($request->session()->get('username_admin'), $request['kode_permohonan']));
         return redirect()->back();
     }
-    public function listagenda(Request $request){
-        return view('listagenda');
+    public function listagenda(){
+        $lists=DB::select('select * from agenda where tanggal_mulai_agenda > now()');
+        return view('listagenda', ['lists'=>$lists]);
     }
-    public function editagenda(Request $request){
-        return view('editagenda');
+    public function editagenda($time){
+        $data=DB::select('select * from agenda where timestamp_agenda=?',array($time));
+        return view('editagenda', ['data'=>$data]);
     }
-    public function tambahdosen(Request $request){
+    public function tambahdosen(){
         return view('tambahdosen');
+    }
+    public function add(Request $request){
+        DB::select('call tambahDosen(?,?,?)', array($request['nama'],$request['nidn'],$request['pass']));
+        return redirect()->back();
     }
 }

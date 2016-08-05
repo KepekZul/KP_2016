@@ -26,10 +26,10 @@
                         <form role="form" action="post" method="POST">
                             <h4>Posisi:</h4>
                             <div class="form-group">
-                                <input name='status_baru' type='text' class="form-control" list='listid'>
+                                <input name='status_baru' type='text' class="form-control" list='listid' autocomplete="off">
                                 <datalist id='listid'>
                                    @foreach($status as $stat)
-                                   <option label='{{$stat->status}}' value='{{$stat->status}}'></option>
+                                   <option label='{{$stat->status_dosen}}' value='{{$stat->status_dosen}}'></option>
                                    @endforeach
                                 </datalist>
                             </div>

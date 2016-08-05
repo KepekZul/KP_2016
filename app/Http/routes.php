@@ -30,8 +30,9 @@ Route::post('admin/lihat', 'adminController@lihat');
 Route::post('admin/acc', 'adminController@acc');
 Route::post('admin/tolak', 'adminController@del');
 Route::get('admin/listagenda','adminController@listagenda');
-Route::get('admin/editagenda','adminController@editagenda');
+Route::get('admin/editagenda/{time}','adminController@editagenda');
 Route::get('admin/tambahdosen','adminController@tambahdosen');
+Route::post('admin/add', 'adminController@add');
 
 //Dosen
 Route::get('dosen/index', 'dosenController@index');

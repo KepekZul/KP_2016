@@ -40,12 +40,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($lists as $list)
                                     <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td><a href="editagenda"><button type="button" class="btn btn-sm btn-info">Edit</button></a></td>
+                                        <td>{{$list->tanggal_mulai_agenda}}</td>
+                                        <td>{{$list->tanggal_selesai_agenda}}</td>
+                                        <td>{{$list->isi_agenda}}</td>
+                                        <td><a href="editagenda/{{$list->timestamp_agenda}}"><button type="button" class="btn btn-sm btn-info">Edit</button></a></td>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
