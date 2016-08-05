@@ -5,7 +5,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index">Admin</a>
+                <a class="navbar-brand" href="/admin/index">Admin</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -17,19 +17,19 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href="index">Beranda</a>
+                        <a href="/admin/index">Beranda</a>
                     </li>
                     <li>
-                        <a href="agenda">Post Agenda Jurusan</a>
+                        <a href="/admin/agenda">Post Agenda Jurusan</a>
                     </li>
                     <li>
-                        <a href="listagenda">Edit Agenda Jurusan</a>
+                        <a href="/admin/listagenda">Edit Agenda Jurusan</a>
                     </li>
                     <li>
-                        <a href="accruangan">Permintaan Peminjaman Ruangan</a>
+                        <a href="/admin/accruangan">Permintaan Peminjaman Ruangan</a>
                     </li>
                     <li>
-                        <a href="tambahdosen">Tambah Data Dosen</a>
+                        <a href="/admin/tambahdosen">Tambah Data Dosen</a>
                     </li>
                 </ul>
             </div>

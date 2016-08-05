@@ -51,6 +51,15 @@ class adminController extends Controller
         $data=DB::select('select * from agenda where timestamp_agenda=?',array($time));
         return view('editagenda', ['data'=>$data]);
     }
+    public function ubah(Request $request, $time){
+        DB::select('delete from agenda where timestamp_agenda=?', array($time));
+        DB::select('call isiAgenda(?,?,?,?)', array($request->isi,$request->mulai,$request->session()->get('username_admin'), $request->selesai));
+        return redirect('admin/listagenda');
+    }
+    public function hapus($time){
+        DB::select('delete from agenda where timestamp_agenda=?', array($time));
+        return redirect('admin/listagenda');
+    }
     public function tambahdosen(){
         return view('tambahdosen');
     }

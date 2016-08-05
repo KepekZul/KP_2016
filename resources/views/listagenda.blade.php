@@ -36,7 +36,8 @@
                                         <th>Tanggal Mulai</th>
                                         <th>Tanggal Selesai</th>
                                         <th>Isi Agenda</th>
-                                        <th>Edit</th>
+                                        <th>Sunting</th>
+                                        <th>Hapus</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -45,7 +46,8 @@
                                         <td>{{$list->tanggal_mulai_agenda}}</td>
                                         <td>{{$list->tanggal_selesai_agenda}}</td>
                                         <td>{{$list->isi_agenda}}</td>
-                                        <td><a href="editagenda/{{$list->timestamp_agenda}}"><button type="button" class="btn btn-sm btn-info">Edit</button></a></td>
+                                        <td><a href="editagenda/{{$list->timestamp_agenda}}"><button type="button" class="btn btn-sm btn-info">Sunting</button></a></td>
+                                        <td><a href="hapusagenda/{{$list->timestamp_agenda}}"><button type="button" class="btn btn-sm btn-danger">Hapus</button></a></td>
                                     </tr>
                                     @endforeach
                                 </tbody>
