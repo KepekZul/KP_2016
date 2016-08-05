@@ -35,7 +35,8 @@ Route::get('admin/tambahdosen','adminController@tambahdosen');
 
 //Dosen
 Route::get('dosen/index', 'dosenController@index');
-Route::get('dosen/post', 'dosenController@postStatus');
+Route::get('dosen/status', 'dosenController@getStatus');
+Route::post('dosen/post', 'dosenController@post');
 
 Route::get('/accruangan','AccruanganController@showAccruangan');
 Route::get('/agenda','AgendaController@showAgenda');

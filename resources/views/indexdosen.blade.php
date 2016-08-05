@@ -36,7 +36,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="post">
+                            <a href="status">
                                 <div class="panel-footer">
                                     <span class="pull-left">Lihat</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

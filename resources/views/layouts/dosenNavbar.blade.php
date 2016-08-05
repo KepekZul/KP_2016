@@ -22,7 +22,7 @@
                         <a href="index">Beranda</a>
                     </li>
                     <li>
-                        <a href="post">Post Status Dosen</a>
+                        <a href="status">Post Status Dosen</a>
                     </li>
                 </ul>
             </div>
