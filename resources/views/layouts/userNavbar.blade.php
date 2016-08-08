@@ -17,7 +17,7 @@
             <a href="/reservasi">Reservasi Ruangan</a>
         </li>
         <li>
-            <a href="/dosen">Lihat Dosen</a>
+            <a href="/lihatdosen">Lihat Dosen</a>
         </li>
         
     </ul>

@@ -44,7 +44,7 @@ class adminController extends Controller
         return redirect()->back();
     }
     public function listagenda(){
-        $lists=DB::select('select * from agenda where tanggal_mulai_agenda > now()');
+        $lists=DB::select('select * from agenda where tanggal_mulai_agenda > now() order by tanggal_mulai_agenda');
         return view('listagenda', ['lists'=>$lists]);
     }
     public function editagenda($time){

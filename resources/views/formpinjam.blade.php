@@ -35,9 +35,9 @@
         </div>
         <div class="well">
             <form role="form" action="isiPinjam" method="POST">
-                <h4>Nama:</h4>
+                <h4>Nama Lengkap:</h4>
                 <div class="form-group">
-                    <input type="text" name="nama" class="form-control">
+                    <input type="text" name="nama" class="form-control" autocomplete="false">
                 </div>
                 <h4>No. Telepon:</h4>
                 <div class="form-group">
