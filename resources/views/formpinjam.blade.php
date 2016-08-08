@@ -30,11 +30,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Form Pinjam Ruangan</h1>
+                <h1 class="page-header">Form Peminjaman Ruangan</h1>
             </div>
         </div>
         <div class="well">
-            <form role="form" action="#" method="POST">
+            <form role="form" action="isiPinjam" method="POST">
                 <h4>Nama:</h4>
                 <div class="form-group">
                     <input type="text" name="nama" class="form-control">
@@ -70,16 +70,17 @@
                 <h4>Ruang yang Ingin Dipinjam:</h4>
                 <div class="form-group">
                     <select name="ruang" class="form-control">
-                        <option>Ruang 105</option>
-                        <option>Ruang Sidang</option>
+                        @foreach($ruangan as $ruang)
+                        <option value="{{$ruang->nama_ruangan}}">{{$ruang->nama_ruangan}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <h4>Rutinitas:</h4>
                 <div class="form-group">
                     <select name="rutin" class="form-control">
-                        <option>Harian</option>
-                        <option>Bulanan</option>
-                        <option>Tahunan</option>
+                        @foreach($rutinitas as $rutin)
+                        <option value="{{$rutin->frekwensi_rutinitas}}">{{$rutin->keterangan_rutinitas}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <h4>Kali Peminjaman:</h4>

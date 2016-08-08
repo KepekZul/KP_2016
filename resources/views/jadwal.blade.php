@@ -28,13 +28,9 @@
 
     <!-- Page Content -->
     <div class="container">
-        <a href="formpinjam" class="btn btn-primary btn-large">Form Pinjam Ruangan</a>
+        <a href="/pinjam" class="btn btn-primary btn-large">Form Pinjam Ruangan</a>
         <hr>
-
-        
-
         <hr>
-
         <!-- Footer -->
         <footer>
             <div class="row">

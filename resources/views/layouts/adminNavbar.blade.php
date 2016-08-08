@@ -31,6 +31,9 @@
                     <li>
                         <a href="/admin/tambahdosen">Tambah Data Dosen</a>
                     </li>
+                    <li>
+                        <a href="/admin/setelan">Setelan</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -11,13 +11,13 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
         <li>
-            <a href="agenda">Agenda Jurusan</a>
+            <a href="/agenda">Agenda Jurusan</a>
         </li>
         <li>
-            <a href="jadwal">Pinjam Ruangan</a>
+            <a href="/reservasi">Reservasi Ruangan</a>
         </li>
         <li>
-            <a href="lihatdosen">Lihat Dosen</a>
+            <a href="/dosen">Lihat Dosen</a>
         </li>
         
     </ul>

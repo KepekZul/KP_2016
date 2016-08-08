@@ -35,22 +35,17 @@ Route::get('admin/hapusagenda/{time}','adminController@hapus');
 Route::post('admin/ubah/{time}','adminController@ubah');
 Route::get('admin/tambahdosen','adminController@tambahdosen');
 Route::post('admin/add', 'adminController@add');
+Route::get('admin/setelan', 'adminController@setting');
 
 //Dosen
 Route::get('dosen/index', 'dosenController@index');
 Route::get('dosen/status', 'dosenController@getStatus');
 Route::post('dosen/post', 'dosenController@post');
 
-Route::get('/accruangan','AccruanganController@showAccruangan');
-Route::get('/agenda','AgendaController@showAgenda');
-Route::get('/detaildosen','DetailDosenController@showDetailDosen');
-Route::get('/formlogin','FormLoginController@showFormLogin');
-Route::get('/formpinjam','FormPinjamController@showFormPinjam');
-Route::get('/indexadmin','IndexAdminController@showIndexAdmin');
-Route::get('/index','IndexController@showIndex');
-Route::get('/indexdosen','IndexDosenController@showIndexDosen');
-Route::get('/jadwal','JadwalController@showJadwal');
-Route::get('/lihatdosen','LihatDosenController@showLihatDosen');
-Route::get('/postagenda','PostAgendaController@showPostAgenda');
-Route::get('/poststatus','PostStatusController@showPostStatus');
-Route::get('/logindosen','FormLoginDosenController@showFormLoginDosen');
+//umum
+Route::get('/index', 'umumController@index');
+Route::get('/agenda', 'umumController@agenda');
+Route::get('/reservasi', 'umumController@reservasi');
+Route::get('/dosen', 'umumController@dosen');
+Route::get('/pinjam', 'umumController@pinjam');
+Route::post('/isiPinjam', 'umumController@isiPinjam');
