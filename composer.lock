@@ -4,42 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c070b767daf22921fb2d52abddb68988",
-    "content-hash": "a1cb79148d24b6f1a822c4b30602e3af",
+    "hash": "6c4dac3ffbc716d8ad5d3ed8c0496966",
+    "content-hash": "169c1af9817c1998bb8566be17c04021",
     "packages": [
-        {
-            "name": "arkhas/laravel5calendar",
-            "version": "v1.0.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Arkhas/Laravel5Calendar.git",
-                "reference": "01b615b915fb772cf14bf3df1cd00449327301aa"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Arkhas/Laravel5Calendar/zipball/01b615b915fb772cf14bf3df1cd00449327301aa",
-                "reference": "01b615b915fb772cf14bf3df1cd00449327301aa",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Arkhas\\Calendar\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Arkhas",
-                    "email": "git@arkhas.fr"
-                }
-            ],
-            "description": "A calendar with event managment package for laravel 5 using Carbon and Blade templating",
-            "time": "2016-05-20 07:51:02"
-        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -341,16 +308,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "5.2.41",
+            "version": "v5.2.42",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2"
+                "reference": "d1bf46f359d2ede2d4ef847fb79d3758d868f2b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
-                "reference": "29ba2e310cfeb42ab6545bcd81ff4c2ec1f6b5c2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/d1bf46f359d2ede2d4ef847fb79d3758d868f2b7",
+                "reference": "d1bf46f359d2ede2d4ef847fb79d3758d868f2b7",
                 "shasum": ""
             },
             "require": {
@@ -467,7 +434,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-07-20 13:13:06"
+            "time": "2016-08-08 13:39:44"
         },
         {
             "name": "league/flysystem",

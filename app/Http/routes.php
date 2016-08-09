@@ -23,26 +23,26 @@ Route::get('logout', 'loginController@logout');
 
 //Admin
 Route::get('/admin', function(){return redirect('admin/index');});
-Route::get('/admin/index', 'adminController@index');
-Route::get('/admin/accruangan', 'adminController@accRuangan');
-Route::get('/admin/agenda', 'adminController@agenda');
-Route::post('/admin/isiAgenda', 'adminController@isiAgenda');
-Route::post('/admin/lihat', 'adminController@lihat');
-Route::post('/admin/acc', 'adminController@acc');
-Route::post('/admin/tolak', 'adminController@del');
-Route::get('/admin/listagenda','adminController@listagenda');
-Route::get('/admin/editagenda/{time}','adminController@editagenda');
-Route::get('/admin/hapusagenda/{time}','adminController@hapus');
-Route::post('/admin/ubah/{time}','adminController@ubah');
-Route::get('/admin/tambahdosen','adminController@tambahdosen');
-Route::post('/admin/add', 'adminController@add');
-Route::get('/admin/setelan', 'adminController@setting');
+Route::get('/admin/index', 'adminController@index')->middleware('admin');
+Route::get('/admin/accruangan', 'adminController@accRuangan')->middleware('admin');
+Route::get('/admin/agenda', 'adminController@agenda')->middleware('admin');
+Route::post('/admin/isiAgenda', 'adminController@isiAgenda')->middleware('admin');
+Route::post('/admin/lihat', 'adminController@lihat')->middleware('admin');
+Route::post('/admin/acc', 'adminController@acc')->middleware('admin');
+Route::post('/admin/tolak', 'adminController@del')->middleware('admin');
+Route::get('/admin/listagenda','adminController@listagenda')->middleware('admin');
+Route::get('/admin/editagenda/{time}','adminController@editagenda')->middleware('admin');
+Route::get('/admin/hapusagenda/{time}','adminController@hapus')->middleware('admin');
+Route::post('/admin/ubah/{time}','adminController@ubah')->middleware('admin');
+Route::get('/admin/tambahdosen','adminController@tambahdosen')->middleware('admin');
+Route::post('/admin/add', 'adminController@add')->middleware('admin');
+Route::get('/admin/setelan', 'adminController@setting')->middleware('admin');
 
 //Dosen
 Route::get('/dosen', function(){return redirect('dosen/index');});
-Route::get('/dosen/index', 'dosenController@index');
-Route::get('/dosen/status', 'dosenController@getStatus');
-Route::post('/dosen/post', 'dosenController@post');
+Route::get('/dosen/index', 'dosenController@index')->middleware('dosen');
+Route::get('/dosen/status', 'dosenController@getStatus')->middleware('dosen');
+Route::post('/dosen/post', 'dosenController@post')->middleware('dosen');
 
 //umum
 Route::get('/index', 'umumController@index');
@@ -51,3 +51,4 @@ Route::get('/reservasi', 'umumController@reservasi');
 Route::get('/lihatdosen', 'umumController@dosen');
 Route::get('/pinjam', 'umumController@pinjam');
 Route::post('/isiPinjam', 'umumController@isiPinjam');
+Route::post('/lihatdosen/data', 'umumController@data');

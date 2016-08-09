@@ -48,7 +48,7 @@
                     <div class="caption">
                         <h3>Agenda Jurusan</h3>
                         <p>
-                            <a href="agenda" class="btn btn-primary">Lihat</a>
+                            <a href="/agenda" class="btn btn-primary">Lihat</a>
                         </p>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                     <div class="caption">
                         <h3>Pinjam Ruangan</h3>
                         <p>
-                            <a href="formpinjam" class="btn btn-primary">Lihat</a>
+                            <a href="/pinjam" class="btn btn-primary">Lihat</a>
                         </p>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                     <div class="caption">
                         <h3>Jadwal Peminjaman Ruangan</h3>
                         <p>
-                            <a href="jadwal" class="btn btn-primary">Lihat</a>
+                            <a href="/reservasi" class="btn btn-primary">Lihat</a>
                         </p>
                     </div>
                 </div>

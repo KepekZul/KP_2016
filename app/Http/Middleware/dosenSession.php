@@ -15,8 +15,8 @@ class dosenSession
      */
     public function handle($request, Closure $next)
     {
-        if($request->session()->has('nidn_dosen')){
-            redirect('/login/dosen');
+        if(!$request->session()->has('nidn_dosen')){
+            return redirect('/login/dosen');
         }
         return $next($request);
     }
