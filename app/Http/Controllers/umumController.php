@@ -20,7 +20,8 @@ class umumController extends Controller
     	return view('jadwal');
     }
     public function dosen(){
-    	return view('lihatdosen');
+        $listDosen = DB::select('select nama_dosen from dosen');
+    	return view('lihatdosen', ['listDosen'=>$listDosen]);
     }
     public function pinjam(){
     	$ruangan=DB::select('select * from ruangan');
@@ -35,5 +36,9 @@ class umumController extends Controller
         }else{
             return '0';
         }
+    }
+    function data(Request $request){
+        $data = DB::select('call getListDosen(?)', array($request['katakunci']));
+
     }
 }

@@ -33,10 +33,15 @@
             <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Masukkan Nama Dosen</h4>
-                    <div class="input-group" method="GET">
-                        <input type="text" class="form-control">
+                    <div class="input-group">
+                        <input type="text" class="form-control" list="listdosen" autocomplete="false" name="katakunci">
+                        <datalist id='listdosen'>
+                            @foreach($listDosen as $dosen)
+                            <option>{{$dosen->nama_dosen}}</option>
+                            @endforeach
+                        </datalist>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
+                            <button class="btn btn-default" type="button" onclick="getList">
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
@@ -50,13 +55,23 @@
 
         <div class="row">
             <div class="col-lg-8">
-                <ul class="list-group">
-                    <li class="list-group-item"></li>
+                <ul class="list-group" id="kotakDosen">
                     <li class="list-group-item"></li>
                 </ul>
             </div>
         </div>
-
+<script type="text/javascript">
+function getList(){
+    document.getElementById('kotakDosen').innerHTML="asd";
+    // $.ajax({
+    //     type:post,
+    //     url:"lihatdosen/data",
+    //     success: function(){
+    //         document.getElementById('kotakDosen').innerHTML="asd";
+    //     }
+    // })
+}
+</script>
         <!-- Footer -->
         <footer>
             <div class="row">
