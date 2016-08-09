@@ -6,7 +6,9 @@
     "type": "project",
     "require": {
         "php": ">=5.5.9",
-        "laravel/framework": "5.2.*"
+        "laravel/framework": "5.2.*",
+        "skecskes/calendar": "0.2.*",
+        "arkhas/laravel5calendar": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
