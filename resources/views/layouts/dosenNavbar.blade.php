@@ -24,6 +24,9 @@
                     <li>
                         <a href="status">Post Status Dosen</a>
                     </li>
+                    <li>
+                        <a href="gantipassword">Ganti Password</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

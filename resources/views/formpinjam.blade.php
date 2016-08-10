@@ -33,6 +33,11 @@
                 <h1 class="page-header">Form Peminjaman Ruangan</h1>
             </div>
         </div>
+        @if(Session::has('msg'))
+            <span style="background-color:red; color:white;">
+                {{Session::get('msg')}}
+            </span>
+        @endif
         <div class="well">
             <form role="form" action="isiPinjam" method="POST">
                 <h4>Nama Lengkap:</h4>
@@ -105,7 +110,8 @@
 
     </div>
     <!-- /.container -->
-
+    <script type="text/javascript">
+    </script>
     <!-- jQuery -->
     <script src="{{ URL::asset('js/jquery.js') }}"></script>
 

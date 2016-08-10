@@ -32,7 +32,7 @@
              <div class="col-lg-8">
             <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Masukkan Nama Dosen</h4>
+                    <h4>Masukkan Nama atau NIDN Dosen</h4>
                     <div class="input-group">
                         <input id="kunci" type="text" class="form-control" list="listdosen" autocomplete="false">
                         <datalist id='listdosen'>
