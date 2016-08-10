@@ -51,4 +51,4 @@ Route::get('/reservasi', 'umumController@reservasi');
 Route::get('/lihatdosen', 'umumController@dosen');
 Route::get('/pinjam', 'umumController@pinjam');
 Route::post('/isiPinjam', 'umumController@isiPinjam');
-Route::post('/lihatdosen/data', 'umumController@data');
+Route::get('/lihatdosen/data/{kunci}', 'umumController@data');

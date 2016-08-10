@@ -29,6 +29,8 @@
     <div class="container">
         <a href="/pinjam" class="btn btn-primary btn-large">Form Pinjam Ruangan</a>
         <hr>
+        <div name="agenda">
+        </div>
         <hr>
         <!-- Footer -->
         <footer>

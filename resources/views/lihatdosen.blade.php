@@ -32,16 +32,16 @@
              <div class="col-lg-8">
             <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Masukkan Nama Dosen</h4>
+                    <h4>Masukkan Nama atau NIDN Dosen</h4>
                     <div class="input-group">
-                        <input type="text" class="form-control" list="listdosen" autocomplete="false" name="katakunci">
+                        <input id="kunci" type="text" class="form-control" list="listdosen" autocomplete="false">
                         <datalist id='listdosen'>
                             @foreach($listDosen as $dosen)
                             <option>{{$dosen->nama_dosen}}</option>
                             @endforeach
                         </datalist>
                         <span class="input-group-btn">
-                            <button class="btn btn-default" type="button" onclick="getList">
+                            <button class="btn btn-default" type="button" onclick="getList();">
                                 <span class="glyphicon glyphicon-search"></span>
                         </button>
                         </span>
@@ -56,21 +56,33 @@
         <div class="row">
             <div class="col-lg-8">
                 <ul class="list-group" id="kotakDosen">
-                    <li class="list-group-item"></li>
                 </ul>
             </div>
         </div>
 <script type="text/javascript">
 function getList(){
-    document.getElementById('kotakDosen').innerHTML="asd";
-    // $.ajax({
-    //     type:post,
-    //     url:"lihatdosen/data",
-    //     success: function(){
-    //         document.getElementById('kotakDosen').innerHTML="asd";
-    //     }
-    // })
-}
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange=function(){
+        if(xhttp.readyState==4 && xhttp.status==200){
+            $all = JSON.parse(xhttp.responseText);
+            $isiHTML="";
+            var cont = Object.keys($all["dataDosen"]).length;
+            console.log(cont);
+            for(i=0; i<cont; i++){
+                $data = $all["dataDosen"][i];
+                $nama = $data["nama_dosen"];
+                $nidn = $data["NIDN_dosen"];
+                $posisi = $data["status_terkini"];
+                $pengumuman = $data["pengumuman_terkini"];
+                $isiHTML=$isiHTML+"<li class='list-group-item'>Dosen: "+$nama+"<br>"+"NIDN: "+$nidn+"<br>"+"Posisi: "+$posisi+"<br>"+"Pengumuman: "+$pengumuman+"<br>";
+            }
+            console.log($isiHTML);
+            document.getElementById("kotakDosen").innerHTML=$isiHTML;
+        }
+    };
+    xhttp.open("get", "/lihatdosen/data/"+document.getElementById("kunci").value, true);
+    xhttp.send();
+};
 </script>
         <!-- Footer -->
         <footer>

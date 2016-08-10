@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -32,13 +34,15 @@ class umumController extends Controller
     	DB::select('call isiPemohon(?,?,?)', array($request['nama'], $request['telp'], $request['email']));
         $pengisian = DB::select('call isiPermohonan(?,?,?, ?,?,?, ?,?,?)', array($request['nama'],$request['keg'], $request['tglmulai'], $request['wktmulai'], $request['wktselesai'], $request['badan'], $request['ruang'], $request['rutin'], $request['kali']));
         if($pengisian[0]->pesan==1){
-            return '1';
+            session::flash('msg', 'Permohonan telah diterima tunggu persetujuan dari bagian tata usaha. Kode permohonan anda '.$pengisian[0]->Kode_Pemesanan);
+            return redirect()->back();
         }else{
-            return '0';
+            session::flash('msg', 'Permohonan tidak dapat diterima karena pada saat bersamaan telah ada kegiatan lain');
+            return redirect()->back();
         }
     }
-    function data(Request $request){
-        $data = DB::select('call getListDosen(?)', array($request['katakunci']));
-
+    function data($kunci){
+        $data = DB::select('call getListDosen(?)', array($kunci));
+        return response()->json(['dataDosen'=>$data]);
     }
 }
