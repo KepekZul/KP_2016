@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3111fa42c1d7c80339abffa1b5770c6a",
-    "content-hash": "169c1af9817c1998bb8566be17c04021",
+    "hash": "a2eb7422093ce7edb7757aa5ce89c265",
+    "content-hash": "7066d0c86319c86fc38a3882c6cbbb4a",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1767,6 +1767,97 @@
                 "dump"
             ],
             "time": "2016-07-26 08:03:56"
+        },
+        {
+            "name": "todstoychev/calendar-events",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/todstoychev/calendar-events.git",
+                "reference": "ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/todstoychev/calendar-events/zipball/ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2",
+                "reference": "ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.0",
+                "php": ">=5.5.9",
+                "todstoychev/websafe-colors": "^0.1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.24"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Todstoychev\\CalendarEvents\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Todor Todorov",
+                    "email": "todstoychev@gmail.com"
+                }
+            ],
+            "description": "Full calendar events module for Laravel",
+            "homepage": "https://github.com/todstoychev/case-convertor",
+            "keywords": [
+                "calendar",
+                "events",
+                "fullcalendar",
+                "laravel"
+            ],
+            "time": "2016-03-25 20:25:24"
+        },
+        {
+            "name": "todstoychev/websafe-colors",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/todstoychev/websafe-colors.git",
+                "reference": "3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/todstoychev/websafe-colors/zipball/3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958",
+                "reference": "3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Todstoychev\\Wsc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Todor Todorov",
+                    "email": "todstoychev@gmail.com"
+                }
+            ],
+            "description": "Web safe colors generator",
+            "homepage": "https://github.com/todstoychev/websafe-colors",
+            "keywords": [
+                "color codes",
+                "generator",
+                "hex",
+                "rgb"
+            ],
+            "time": "2016-03-25 20:18:50"
         },
         {
             "name": "vlucas/phpdotenv",
