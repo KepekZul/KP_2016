@@ -4,9 +4,42 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c4dac3ffbc716d8ad5d3ed8c0496966",
-    "content-hash": "169c1af9817c1998bb8566be17c04021",
+    "hash": "2430e8892d023a6c936f8f52f7000da6",
+    "content-hash": "ee6f2e70afd062450fd201053d984ba2",
     "packages": [
+        {
+            "name": "arkhas/laravel5calendar",
+            "version": "v1.0.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Arkhas/Laravel5Calendar.git",
+                "reference": "01b615b915fb772cf14bf3df1cd00449327301aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Arkhas/Laravel5Calendar/zipball/01b615b915fb772cf14bf3df1cd00449327301aa",
+                "reference": "01b615b915fb772cf14bf3df1cd00449327301aa",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Arkhas\\Calendar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Arkhas",
+                    "email": "git@arkhas.fr"
+                }
+            ],
+            "description": "A calendar with event managment package for laravel 5 using Carbon and Blade templating",
+            "time": "2016-05-20 07:51:02"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -1767,6 +1800,97 @@
                 "dump"
             ],
             "time": "2016-07-26 08:03:56"
+        },
+        {
+            "name": "todstoychev/calendar-events",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/todstoychev/calendar-events.git",
+                "reference": "ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/todstoychev/calendar-events/zipball/ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2",
+                "reference": "ab59fef6d4f762db1ff31a7f12a2be3e000ad6d2",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "~5.0",
+                "php": ">=5.5.9",
+                "todstoychev/websafe-colors": "^0.1.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.8.24"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Todstoychev\\CalendarEvents\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Todor Todorov",
+                    "email": "todstoychev@gmail.com"
+                }
+            ],
+            "description": "Full calendar events module for Laravel",
+            "homepage": "https://github.com/todstoychev/case-convertor",
+            "keywords": [
+                "calendar",
+                "events",
+                "fullcalendar",
+                "laravel"
+            ],
+            "time": "2016-03-25 20:25:24"
+        },
+        {
+            "name": "todstoychev/websafe-colors",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/todstoychev/websafe-colors.git",
+                "reference": "3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/todstoychev/websafe-colors/zipball/3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958",
+                "reference": "3ab5d9307abb1ed6bf9f2d46eca33ebcdc778958",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Todstoychev\\Wsc\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Todor Todorov",
+                    "email": "todstoychev@gmail.com"
+                }
+            ],
+            "description": "Web safe colors generator",
+            "homepage": "https://github.com/todstoychev/websafe-colors",
+            "keywords": [
+                "color codes",
+                "generator",
+                "hex",
+                "rgb"
+            ],
+            "time": "2016-03-25 20:18:50"
         },
         {
             "name": "vlucas/phpdotenv",
