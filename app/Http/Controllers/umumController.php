@@ -37,8 +37,8 @@ class umumController extends Controller
             return '0';
         }
     }
-    function data(Request $request){
-        $data = DB::select('call getListDosen(?)', array($request['katakunci']));
-
+    function data($kunci){
+        $data = DB::select('call getListDosen(?)', array($kunci));
+        return response()->json(['dataDosen'=>$data]);
     }
 }
