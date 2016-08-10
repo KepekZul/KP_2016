@@ -7,7 +7,12 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
+<<<<<<< HEAD
 		"skecskes/calendar": "0.2.*",
+=======
+        "skecskes/calendar": "0.2.*",
+        "arkhas/laravel5calendar": "^1.0",
+>>>>>>> f42fd8f5bf5ca85e81656f81c2a52ca10daf94dd
         "todstoychev/calendar-events": "^0.1.0"
     },
     "require-dev": {

@@ -30,6 +30,7 @@
     <div class="container center_div">
         <div class="row text-center">
         <form action="loga" method="post">
+            <div></div>
             <div class="col-xs-3 col-centered" style="float:relative">
                 <div class="thumbnail">
                     <img style="width:200px;height:200px" src="../img/user.png" alt="">

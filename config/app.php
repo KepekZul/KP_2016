@@ -157,6 +157,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Skecskes\Calendar\CalendarServiceProvider::class,
+        //Arkhas\Calendar\CalendarServiceProvider::class,
+        Todstoychev\CalendarEvents\CalendarEventsServiceProvider::class,
     ],
 
     /*
@@ -177,7 +179,6 @@ return [
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
         'Cache' => Illuminate\Support\Facades\Cache::class,
-        'Calendar'=> Skecskes\Calendar\CalendarServiceProvider::class,
         'Config' => Illuminate\Support\Facades\Config::class,
         'Cookie' => Illuminate\Support\Facades\Cookie::class,
         'Crypt' => Illuminate\Support\Facades\Crypt::class,
@@ -203,6 +204,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        //'Calendar' => Arkhas\Calendar\Facades\Calendar::class,
 
     ],
 
