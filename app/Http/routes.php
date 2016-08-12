@@ -37,6 +37,9 @@ Route::post('/admin/ubah/{time}','adminController@ubah')->middleware('admin');
 Route::get('/admin/tambahdosen','adminController@tambahdosen')->middleware('admin');
 Route::post('/admin/add', 'adminController@add')->middleware('admin');
 Route::get('/admin/setelan', 'adminController@setting')->middleware('admin');
+Route::get('/admin/editpeminjaman', 'adminController@editpeminjaman')->middleware('admin');
+Route::get('/admin/suntingpeminjaman/{kodepeminjaman}', 'adminController@halamaneditpinjam')->middleware('admin');
+Route::post('/admin/hapus', 'adminController@hapuspeminjaman')->middleware('admin');
 
 //Dosen
 Route::get('/dosen', function(){return redirect('dosen/index');});
@@ -52,3 +55,4 @@ Route::get('/lihatdosen', 'umumController@dosen');
 Route::get('/pinjam', 'umumController@pinjam');
 Route::post('/isiPinjam', 'umumController@isiPinjam');
 Route::get('/lihatdosen/data/{kunci}', 'umumController@data');
+Route::get('/feeder', 'umumController@feeder');

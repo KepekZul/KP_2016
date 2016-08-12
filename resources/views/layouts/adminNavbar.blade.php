@@ -29,6 +29,9 @@
                         <a href="/admin/accruangan">Permintaan Peminjaman Ruangan</a>
                     </li>
                     <li>
+                        <a href="/admin/editpeminjaman">Sunting Peminjaman Ruangan</a>
+                    </li>
+                    <li>
                         <a href="/admin/tambahdosen">Tambah Data Dosen</a>
                     </li>
                     <li>

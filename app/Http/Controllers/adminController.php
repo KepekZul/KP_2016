@@ -16,7 +16,7 @@ class adminController extends Controller
     	return view('indexadmin');
     }
     public function accRuangan(){
-    	$listPermohonan = DB::select('select * from daftar_permohonan where status_permohonan = ?', ['Diproses']);
+    	$listPermohonan = DB::select('select * from daftar_permohonan where status_permohonan = "Diproses" order by tanggal_masuk_permohonan ASC');
     	return view('accruangan', ['listPermohonan'=>$listPermohonan]);
     }
     public function agenda(Request $Request){
@@ -64,7 +64,19 @@ class adminController extends Controller
         return view('tambahdosen');
     }
     public function add(Request $request){
-        DB::select('call tambahDosen(?,?,?,?)', array($request['nama'],$request['nidn'],$request['pass']),$request->session()->get('username_admin'));
+        DB::select('call tambahDosen(?,?,?,?)', array($request['nama'],$request['nidn'],$request['pass'],$request->session()->get('username_admin')));
+        return redirect()->back();
+    }
+    public function editpeminjaman(){
+        $peminjaman=DB::select('select * FROM daftar_permohonan WHERE status_permohonan="Disetujui" AND tanggal_mulai_permohonan_peminjaman >= CURDATE() ORDER BY tanggal_mulai_permohonan_peminjaman ASC');
+        return view('pinjamacc', ['peminjaman'=>$peminjaman]);
+    }
+    public function halamaneditpinjam($kodepeminjaman){
+        $datapinjam = DB::select('select * from daftar_permohonan where kode_permohonan=?', array($kodepeminjaman));
+        return view('formeditpinjam', ['data'=>$datapinjam]);
+    }
+    public function hapuspeminjaman(Request $request){
+        DB::select('call hapusPeminjaman(?,?)', array($request->kode_permohonan, $request->session()->get('username_admin')));
         return redirect()->back();
     }
     public function setting(){
