@@ -32,26 +32,12 @@
 
         <div class="well">
             <div id="ck_slide">
-                <div>
-                    <h2>agenda 1</h2>
-                    <h4>ini isi agenda</h4>
-                </div>
-                <div>
-                    <h2>agenda 2</h2>
-                    <h4>ini isi agenda</h4>
-                </div>
-                <div>
-                    <h2>agenda 3</h2>
-                    <h4>ini isi agenda</h4>
-                </div>
-                <div>
-                    <h2>agenda 4</h2>
-                    <h4>ini isi agenda</h4>
-                </div>
-                <div>
-                    <h2>agenda 5</h2>
-                    <h4>ini isi agenda</h4>
-                </div>
+                @foreach($agenda as $isiagenda)
+                    <div>
+                        <h2>{{$isiagenda->isi_agenda}}</h2>
+                        <h4>{{$isiagenda->tanggal_mulai_agenda}} sampai dengan {{$isiagenda->tanggal_selesai_agenda}}</h4>
+                    </div>
+                @endforeach
             </div> 
         </div>
         

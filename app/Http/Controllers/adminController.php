@@ -80,7 +80,12 @@ class adminController extends Controller
     }
     public function updatepeminjaman(Request $request){
         $update = DB::select('call updatePeminjaman(?,?,?,?, ?,?,?,?)', array($request['kode_peminjaman'],$request['keg'],$request['tglmulai'],$request['wktmulai'],$request['wktselesai'],$request['ruang'],$request['rutin'],$request['kali']));
-        return print_r($update);
+        if($update[0]->pesan==1){
+            session::flash('edit', 'Pengubahan peminjaman berhasil dilakukan.');
+        }else{
+            session::flash('edit', 'Pengubahan peminjaman gagal dilakukan.');
+        }
+        return redirect('/admin/editpeminjaman');
     }
     public function hapuspeminjaman(Request $request){
         DB::select('call hapusPeminjaman(?,?)', array($request->kode_permohonan, $request->session()->get('username_admin')));
