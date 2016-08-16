@@ -39,6 +39,7 @@ Route::post('/admin/add', 'adminController@add')->middleware('admin');
 Route::get('/admin/setelan', 'adminController@setting')->middleware('admin');
 Route::get('/admin/editpeminjaman', 'adminController@editpeminjaman')->middleware('admin');
 Route::get('/admin/suntingpeminjaman/{kodepeminjaman}', 'adminController@halamaneditpinjam')->middleware('admin');
+Route::post('/admin/updatepeminjaman', 'adminController@updatepeminjaman')->middleware('admin');
 Route::post('/admin/hapus', 'adminController@hapuspeminjaman')->middleware('admin');
 
 //Dosen

@@ -68,12 +68,19 @@ class adminController extends Controller
         return redirect()->back();
     }
     public function editpeminjaman(){
-        $peminjaman=DB::select('select * FROM daftar_permohonan WHERE status_permohonan="Disetujui" AND tanggal_mulai_permohonan_peminjaman >= CURDATE() ORDER BY tanggal_mulai_permohonan_peminjaman ASC');
+        $peminjaman=DB::select('SELECT * FROM daftar_permohonan WHERE status_permohonan="Disetujui" AND kode_permohonan IN (SELECT kode_permohonan FROM waktu_kegiatan WHERE tanggal_kegiatan >= CURDATE()) ORDER BY tanggal_mulai_permohonan_peminjaman ASC');
         return view('pinjamacc', ['peminjaman'=>$peminjaman]);
     }
     public function halamaneditpinjam($kodepeminjaman){
         $datapinjam = DB::select('select * from daftar_permohonan where kode_permohonan=?', array($kodepeminjaman));
-        return view('formeditpinjam', ['data'=>$datapinjam]);
+        $ruangan=DB::select('select * from ruangan');
+        $rutinitas=DB::select('select * from rutinitas');
+        $pemohon=DB::select('select * from pemohon where nama_pemohon=?', array($datapinjam[0]->nama_pemohon_peminjaman));
+        return view('formeditpinjam', ['data'=>$datapinjam, 'ruangan'=>$ruangan, 'rutinitas'=>$rutinitas, 'pemohon'=>$pemohon]);
+    }
+    public function updatepeminjaman(Request $request){
+        $update = DB::select('call updatePeminjaman(?,?,?,?, ?,?,?,?)', array($request['kode_peminjaman'],$request['keg'],$request['tglmulai'],$request['wktmulai'],$request['wktselesai'],$request['ruang'],$request['rutin'],$request['kali']));
+        return print_r($update);
     }
     public function hapuspeminjaman(Request $request){
         DB::select('call hapusPeminjaman(?,?)', array($request->kode_permohonan, $request->session()->get('username_admin')));
