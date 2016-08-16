@@ -30,6 +30,7 @@
         <a href="/pinjam" class="btn btn-primary btn-large">Form Pinjam Ruangan</a>
         <hr>
         <div name="agenda">
+            @include('calendar-events::form')
         </div>
         <hr>
         <!-- Footer -->

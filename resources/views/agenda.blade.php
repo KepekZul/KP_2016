@@ -3,6 +3,7 @@
 
 <head>
     @include('layouts.userHead')
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/slider.css') }}">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +31,28 @@
         <hr>
 
         <div class="well">
-            well well well
+            <div id="ck_slide">
+                <div>
+                    <h2>agenda 1</h2>
+                    <h4>ini isi agenda</h4>
+                </div>
+                <div>
+                    <h2>agenda 2</h2>
+                    <h4>ini isi agenda</h4>
+                </div>
+                <div>
+                    <h2>agenda 3</h2>
+                    <h4>ini isi agenda</h4>
+                </div>
+                <div>
+                    <h2>agenda 4</h2>
+                    <h4>ini isi agenda</h4>
+                </div>
+                <div>
+                    <h2>agenda 5</h2>
+                    <h4>ini isi agenda</h4>
+                </div>
+            </div> 
         </div>
         
         <hr>
@@ -52,7 +74,7 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
-
+    <script src="{{ URL::asset('js/slider.js') }}"></script>
 </body>
 
 </html>
