@@ -41,6 +41,8 @@ Route::get('/admin/editpeminjaman', 'adminController@editpeminjaman')->middlewar
 Route::get('/admin/suntingpeminjaman/{kodepeminjaman}', 'adminController@halamaneditpinjam')->middleware('admin');
 Route::post('/admin/updatepeminjaman', 'adminController@updatepeminjaman')->middleware('admin');
 Route::post('/admin/hapus', 'adminController@hapuspeminjaman')->middleware('admin');
+Route::post('/admin/tambahruang', 'adminController@tambahruang')->middleware('admin');
+Route::post('/admin/tambahinterval', 'adminController@tambahinterval')->middleware('admin');
 
 //Dosen
 Route::get('/dosen', function(){return redirect('dosen/index');});

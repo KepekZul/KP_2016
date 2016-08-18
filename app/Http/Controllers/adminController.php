@@ -79,7 +79,7 @@ class adminController extends Controller
         return view('formeditpinjam', ['data'=>$datapinjam, 'ruangan'=>$ruangan, 'rutinitas'=>$rutinitas, 'pemohon'=>$pemohon]);
     }
     public function updatepeminjaman(Request $request){
-        $update = DB::select('call updatePeminjaman(?,?,?,?, ?,?,?,?)', array($request['kode_peminjaman'],$request['keg'],$request['tglmulai'],$request['wktmulai'],$request['wktselesai'],$request['ruang'],$request['rutin'],$request['kali']));
+        $update = DB::select('call updatePeminjaman(?,?,?,?,?, ?,?,?,?)', array($request->session()->get('username_admin'), $request['kode_peminjaman'],$request['keg'],$request['tglmulai'],$request['wktmulai'],$request['wktselesai'],$request['ruang'],$request['rutin'],$request['kali']));
         if($update[0]->pesan==1){
             session::flash('edit', 'Pengubahan peminjaman berhasil dilakukan.');
         }else{
@@ -93,5 +93,20 @@ class adminController extends Controller
     }
     public function setting(){
         return view('setelan');
+    }
+    public function tambahruang(Request $request){
+        $pesan = DB::select('call tambahRuangan(?)', array($request['ruangan']));
+        if($pesan[0]->pesan==1){
+            session::flash('ruang_ok', 'Ruangan telah ditambahkan');
+            return redirect()->back();
+        }else{
+            session::flash('ruang_ko', 'Ruangan sudah ada');
+            return redirect()->back();
+        }
+    }
+    public function tambahinterval(Request $request){
+        $pesan = DB::select('call tambahRuangan(?)', array($request['interval']));
+        session::flash('interval_ok', 'Interval telah ditambahkan');
+        return redirect()->back();
     }
 }

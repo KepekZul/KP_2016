@@ -29,7 +29,45 @@
 
                 <div class="row">
                     <div class="well">
-                       
+                        <form method="post" role="form" action="/admin/tambahruang">
+                            <h4>Tambah Ruangan</h4>
+                            <input name="ruangan" type="text" class="form-control" style="width:70%;" required><br>
+                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                        </form>
+                        @if(Session::has('ruang_ok'))
+                        <span style="background-color:rgb(0,255,0);">{{Session::get('ruang_ok')}}</span>
+                        @endif
+                        @if(Session::has('ruang_ko'))
+                        <span style="background-color:rgb(255,0,0); color:white;">{{Session::get('ruang_ko')}}</span>
+                        @endif
+                    </div>
+                    <br>
+                    <div class="well">
+                        <form method="post" role="form" action="/admin/tambahinterval">
+                            <h4>Tambah Interval Peminjaman</h4>
+                            <table style="width:70%">
+                                <tr>
+                                    <th>
+                                        Interval Hari
+                                    </th>
+                                    <th>
+                                        Keterangan
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <input name="interval" type="text" class="form-control" required><br>
+                                    </th>
+                                    <th>
+                                        <input name="keterangan" type="text" class="form-control" required><br>
+                                    </th>
+                                </tr>
+                            </table>
+                            <button type="submit" class="btn btn-primary">Tambahkan</button>
+                        </form>
+                        @if(Session::has('interval_ok'))
+                        <span style="background-color:rgb(0,255,0);">{{Session::get('interval_ok')}}</span>
+                        @endif
                     </div>
                 </div>
                 <!-- /.row -->

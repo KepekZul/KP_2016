@@ -3,6 +3,23 @@
 
 <head>
     @include('layouts.userHead')
+    <script type="text/javascript">
+    function validasi(){
+        var Tanggal = document.forms["formpinjam"]["tglmulai"].value;
+        var date = new Date();
+        var tahun = date.getFullYear();
+        var bulan = date.getMonth()+1;
+        if(bulan<10) bulan='0'+bulan;
+        var hari = date.getDate();
+        if(hari<10)hari='0'+hari;
+        date = tahun+'-'+bulan+'-'+hari;
+        if(Tanggal<date){
+            alert("Tanggal yang anda pilih telah lewat.")
+            return false;
+        }
+        return true;
+    }
+    </script>
 </head>
 
 <body>
@@ -31,7 +48,7 @@
             </span>
         @endif
         <div class="well">
-            <form role="form" name="formpinjam" action="isiPinjam" method="POST">
+            <form role="form" onsubmit="return validasi()" name="formpinjam" action="isiPinjam" method="POST">
                 <h4>Nama Lengkap:</h4>
                 <div class="form-group">
                     <input type="text" name="nama" class="form-control" autocomplete="false" required>
@@ -84,7 +101,7 @@
                 <div class="form-group">
                     <input type="text" name="kali" class="form-control" required>
                 </div>
-                <button type="submit" name="pinjam" class="btn btn-primary">Pinjam</button>
+            <button type="submit" name="pinjam" class="btn btn-primary">Pinjam</button>
             </form>
         </div>
 
