@@ -29,9 +29,61 @@
     <div class="container">
         <a href="/pinjam" class="btn btn-primary btn-large">Form Pinjam Ruangan</a>
         <hr>
-        <div name="agenda">
-            @include('calendar-events::form')
+        <div class="row">
+            <div class="col-lg-6">
+            <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Pilih Ruang untuk Melihat List Peminjaman</h4>
+                    <div class="input-group">
+                        <input id="kunci" type="text" class="form-control" list="listdosen" autocomplete="false">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6">
+            <!-- Blog Search Well -->
+                <div class="well">
+                    <h4>Pilih Tanggal untuk Melihat List Peminjaman</h4>
+                    <div class="input-group">
+                        <input id="kunci" type="date" class="form-control" list="listdosen" autocomplete="false">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                        </span>
+                    </div>
+                    <!-- /.input-group -->
+                </div>
+            </div>
+        </div>
+            
+        <div class="row">
+            <div class="col-lg-8">
+                <h3>List Peminjaman</h3>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Waktu</th>
+                                <th>Nama Kegiatan</th>
+                                <th>Ruang</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+            
         <hr>
         <!-- Footer -->
         <footer>
