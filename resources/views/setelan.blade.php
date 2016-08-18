@@ -56,7 +56,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        <input name="interval" type="text" class="form-control" required><br>
+                                        <input name="interval" type="number" class="form-control" required><br>
                                     </th>
                                     <th>
                                         <input name="keterangan" type="text" class="form-control" required><br>

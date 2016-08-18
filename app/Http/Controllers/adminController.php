@@ -105,7 +105,7 @@ class adminController extends Controller
         }
     }
     public function tambahinterval(Request $request){
-        $pesan = DB::select('call tambahRuangan(?)', array($request['interval']));
+        $pesan = DB::select('call tambahRutinitas(?,?,?)', array($request['interval'],$request['keterangan'],$request->session()->get('username_admin')));
         session::flash('interval_ok', 'Interval telah ditambahkan');
         return redirect()->back();
     }
