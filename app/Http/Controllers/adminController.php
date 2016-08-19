@@ -13,7 +13,8 @@ use DB;
 class adminController extends Controller
 {
     public function index(){
-    	return view('indexadmin');
+        $jumlah = DB::select('select count(*) as "jumlah" from daftar_permohonan where status_permohonan="Diproses"');
+    	return view('indexadmin', ['jumlah'=>$jumlah]);
     }
     public function accRuangan(){
     	$listPermohonan = DB::select('select * from daftar_permohonan where status_permohonan = "Diproses" order by tanggal_masuk_permohonan ASC');

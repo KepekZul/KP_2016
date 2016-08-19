@@ -3,9 +3,14 @@
 
 <head>
 @include('layouts.dosenHead')
+   <script type="text/javascript">
+        function ini(){
+            document.getElementById("status").className="active";
+        }
+    </script>
 </head>
 
-<body>
+<body onload="ini()">
 
     <div id="wrapper">
         @include('layouts.dosenNavbar')

@@ -17,6 +17,10 @@
             alert("Tanggal yang anda pilih telah lewat.")
             return false;
         }
+        if(document.forms["formpinjam"]["wktmulai"].value>document.forms["formpinjam"]["wktselesai"].value){
+            alert("Waktu mulai dan waktu selesai kegiatan invalid.");
+            return false;
+        }
         return true;
     }
     </script>

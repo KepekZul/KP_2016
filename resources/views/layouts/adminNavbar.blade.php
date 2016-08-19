@@ -16,25 +16,25 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li id="beranda">
                         <a href="/admin/index">Beranda</a>
                     </li>
-                    <li>
+                    <li id="agenda">
                         <a href="/admin/agenda">Post Agenda Jurusan</a>
                     </li>
-                    <li>
+                    <li id="listagenda">
                         <a href="/admin/listagenda">Edit Agenda Jurusan</a>
                     </li>
-                    <li>
+                    <li id="acc">
                         <a href="/admin/accruangan">Permintaan Peminjaman Ruangan</a>
                     </li>
-                    <li>
+                    <li id="editpinjam">
                         <a href="/admin/editpeminjaman">Sunting Peminjaman Ruangan</a>
                     </li>
-                    <li>
+                    <li id="tambahdosen">
                         <a href="/admin/tambahdosen">Tambah Data Dosen</a>
                     </li>
-                    <li>
+                    <li id="setelan">
                         <a href="/admin/setelan">Setelan</a>
                     </li>
                 </ul>

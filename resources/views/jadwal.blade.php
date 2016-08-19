@@ -2,16 +2,33 @@
 <html lang="en">
 
 <head>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    @include('layouts.userHead')
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+   <script type="text/javascript">
+   function cekRuang(){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(xhttp.readyState==4 && xhttp.status==200){
+                $all = JSON.parse(xhttp.responseText);
+                var cont = Object.keys($all["kegiatan"]).length;
+                if(cont>0){
+                    $isiHtml="";
+                    for(i=0; i<cont; i++){
+                        $mulai=$all["kegiatan"][i]["waktu_mulai"];
+                        $selesai=$all["kegiatan"][i]["waktu_selesai"];
+                        $kegiatan=$all["kegiatan"][i]["nama_kegiatan"];
+                        $isiHtml=$isiHtml+"<tr><td>"+$mulai+" sampai "+$selesai+"</td><td>"+$kegiatan+"</tr>";
+                    }
+                    document.getElementById("daftar").innerHTML=$isiHtml;
+                }else{
+                    document.getElementById("daftar").innerHTML="<tr><td>kosong</td><td>kosong</td></tr>";
+                }
+            }
+        };
+        xhttp.open("get", "/reservasi/"+document.getElementById("ruang").value+"/"+document.getElementById("tanggal").value, true);
+        xhttp.send();
+    }
+   </script>
 </head>
 
 <body>
@@ -34,13 +51,12 @@
             <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Pilih Ruang untuk Melihat List Peminjaman</h4>
-                    <div class="input-group">
-                        <input id="kunci" type="text" class="form-control" list="listdosen" autocomplete="false">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+                    <div class="input-group" style="width:80%;" onchange="cekRuang()">
+                        <select name="ruangan" id="ruang" type="text" class="form-control" style="min-width:250px; width:100%;" autocomplete="false">
+                            @foreach($ruangan as $ruang)
+                            <option>{{$ruang->nama_ruangan}}</option>
+                            @endforeach
+                        </select>
                     </div>
                     <!-- /.input-group -->
                 </div>
@@ -51,13 +67,8 @@
             <!-- Blog Search Well -->
                 <div class="well">
                     <h4>Pilih Tanggal untuk Melihat List Peminjaman</h4>
-                    <div class="input-group">
-                        <input id="kunci" type="date" class="form-control" list="listdosen" autocomplete="false">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <span class="glyphicon glyphicon-search"></span>
-                        </button>
-                        </span>
+                    <div class="input-group" style="width:80%;" onchange="cekRuang()">
+                        <input name="tanggal" id="tanggal" type="date" class="form-control" style="min-width:250px; width:100%;" autocomplete="false">
                     </div>
                     <!-- /.input-group -->
                 </div>
@@ -73,11 +84,13 @@
                             <tr>
                                 <th>Waktu</th>
                                 <th>Nama Kegiatan</th>
-                                <th>Ruang</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            
+                        <tbody id="daftar">
+                            <tr>
+                                <td>kosong</td>
+                                <td>kosong</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
