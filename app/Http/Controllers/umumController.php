@@ -20,7 +20,8 @@ class umumController extends Controller
     	return view('agenda', ['agenda'=>$agenda]);
     }
     public function reservasi(){
-    	return view('jadwal');
+        $ruangan = DB::select('select * from ruangan');
+    	return view('jadwal', ['ruangan'=>$ruangan]);
     }
     public function dosen(){
         $listDosen = DB::select('select nama_dosen from dosen');
@@ -45,6 +46,10 @@ class umumController extends Controller
     function data($kunci){
         $data = DB::select('call getListDosen(?)', array($kunci));
         return response()->json(['dataDosen'=>$data]);
+    }
+    function cekRuangan($ruangan, $tanggal){
+        $kegiatan = DB::select('call lihatKegiatan(?,?)', array($ruangan, $tanggal));
+        return response()->json(['kegiatan'=>$kegiatan]);
     }
     function feeder(){
         $ruang='ruang sidang';

@@ -2,8 +2,13 @@
 <html lang="en">
     <head>
         @include('layouts.adminHead')
+        <script type="text/javascript">
+            function ini(){
+                document.getElementById("beranda").className="active";
+            }
+        </script>
     </head>
-<body>
+<body onload="ini()">
 
     <div id="wrapper">
 
@@ -81,7 +86,14 @@
                                         <img style="height:80px" src="../img/acc.png" alt="">
                                     </div>
                                     <div class="col-xs-9 text-right">
-                                        <div><h3>Menyetujui Peminjaman Ruangan</h3></div>
+                                        <div><h3>
+                                            @if($jumlah[0]->jumlah>0)
+                                            <div class="huge">{{$jumlah[0]->jumlah}}</div>
+                                            Permohonan Peminjaman
+                                            @else
+                                            Tidak Ada Permohonan Peminjaman Ruangan
+                                            @endif
+                                        </h3></div>
                                     </div>
                                 </div>
                             </div>

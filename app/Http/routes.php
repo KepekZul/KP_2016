@@ -54,6 +54,7 @@ Route::post('/dosen/post', 'dosenController@post')->middleware('dosen');
 Route::get('/index', 'umumController@index');
 Route::get('/agenda', 'umumController@agenda');
 Route::get('/reservasi', 'umumController@reservasi');
+Route::get('/reservasi/{ruangan}/{tanggal}', 'umumController@cekRuangan');
 Route::get('/lihatdosen', 'umumController@dosen');
 Route::get('/pinjam', 'umumController@pinjam');
 Route::post('/isiPinjam', 'umumController@isiPinjam');

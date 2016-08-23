@@ -30,10 +30,9 @@
     <div class="container center_div">
         <div class="row text-center">
         <form action="loga" method="post">
-            <div></div>
-            <div class="col-xs-3 col-centered" style="float:relative">
+            <div style="float:relative; min-width:180px; margin-top:auto; margin-bottom:auto; margin-left:auto; margin-right:auto;">
                 <div class="thumbnail">
-                    <img style="width:200px;height:200px" src="../img/user.png" alt="">
+                    <img style="width:60%;height:60%" src="../img/user.png" alt="">
                     <div class="caption">
                         <h3>LOGIN</h3>
                         <input type="text" name="id" id="id" class="form-control" placeholder="ID" required autofocus>

@@ -18,14 +18,11 @@
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
+                    <li id="index">
                         <a href="index">Beranda</a>
                     </li>
-                    <li>
+                    <li id="status">
                         <a href="status">Post Status Dosen</a>
-                    </li>
-                    <li>
-                        <a href="gantipassword">Ganti Password</a>
                     </li>
                 </ul>
             </div>

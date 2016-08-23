@@ -3,9 +3,14 @@
 
 <head>
     @include('layouts.adminHead')
+    <script type="text/javascript">
+        function ini(){
+            document.getElementById("setelan").className="active";
+        }
+    </script>
 </head>
 
-<body>
+<body onload="ini()">
 
     <div id="wrapper">
 
@@ -56,7 +61,7 @@
                                 </tr>
                                 <tr>
                                     <th>
-                                        <input name="interval" type="text" class="form-control" required><br>
+                                        <input name="interval" type="number" class="form-control" required><br>
                                     </th>
                                     <th>
                                         <input name="keterangan" type="text" class="form-control" required><br>

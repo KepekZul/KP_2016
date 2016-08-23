@@ -34,8 +34,8 @@
             <div id="ck_slide">
                 @foreach($agenda as $isiagenda)
                     <div>
-                        <h2>{{$isiagenda->isi_agenda}}</h2>
-                        <h4>{{$isiagenda->tanggal_mulai_agenda}} sampai dengan {{$isiagenda->tanggal_selesai_agenda}}</h4>
+                        <h1>{{$isiagenda->isi_agenda}}</h1>
+                        <h3>{{$isiagenda->tanggal_mulai_agenda}} sampai dengan {{$isiagenda->tanggal_selesai_agenda}}</h3>
                     </div>
                 @endforeach
             </div> 

@@ -3,9 +3,14 @@
 
 <head>
     @include('layouts.adminHead')
+    <script type="text/javascript">
+        function ini(){
+            document.getElementById("agenda").className="active";
+        }
+    </script>
 </head>
 
-<body>
+<body onload="ini()">
 
     <div id="wrapper">
 
