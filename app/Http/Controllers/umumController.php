@@ -52,4 +52,8 @@ class umumController extends Controller
         $next = DB::select('call lihatKegiatanBerikut(?)', array($ruang));
         return view('feeder', ['now'=>$now, 'next'=>$next]);
     }
+
+    public function feed(){
+        return view ('feed');
+    }
 }

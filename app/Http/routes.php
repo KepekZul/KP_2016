@@ -59,3 +59,6 @@ Route::get('/pinjam', 'umumController@pinjam');
 Route::post('/isiPinjam', 'umumController@isiPinjam');
 Route::get('/lihatdosen/data/{kunci}', 'umumController@data');
 Route::get('/feeder', 'umumController@feeder');
+
+//feeder
+Route::get('/feed','umumController@feed');
