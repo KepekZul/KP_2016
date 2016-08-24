@@ -15,6 +15,7 @@
     <!-- Page Content -->
     <div class="container">
         <div id="date_time"></div>
+        <img class="logo" src="../img/if.png" alt="if">
         <h2><strong id="ruang">{{$ruang}}</strong></h2>
         @if(count($now)>0)
         <div id="kotakbesar" class="isi" style="background-color:rgb(255,0,0);">
@@ -39,7 +40,11 @@
                 @endif
             </h1>
         </div>
-        
+        <div id="keg"><h1>Kegiatan Selanjutnya</h1></div>
+        <div id="nama">
+            <h3>NAMA KEGIATAN</h3>
+            <h3>WAKTU</h3>
+        </div>    
             
         
 
