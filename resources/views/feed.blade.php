@@ -5,13 +5,7 @@
 
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/slider.css') }}">
     <script src="{{ URL::asset('js/time.js')}}"></script>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <link rel="icon" href="../img/if.png">
 </head>
 
 <body>
@@ -21,11 +15,29 @@
     <!-- Page Content -->
     <div class="container">
         <div id="date_time"></div>
-        <h2><strong>(diisi ruang sidang/105) INFORMATION BOARD</strong></h2>
-
-        <div class="isi">
-            <h1><marquee direction="left" scrollamount="7">NAMA KEGIATAN<br>WAKTU</marquee></h1>
-            <!--<h1><marquee direction="up" scrollamount="3">WAKTU</marquee></h1>-->
+        <h2><strong id="ruang">{{$ruang}}</strong></h2>
+        @if(count($now)>0)
+        <div id="kotakbesar" class="isi" style="background-color:rgb(255,0,0);">
+        @else
+        <div id="kotakbesar" class="isi" style="background-color:rgb(0,255,0);">
+        @endif
+            <h1><marquee id="kegSekarang" direction="up" height="120%" scrollamount="3">
+                @if(count($now)<1)
+                Tidak ada kegiatan
+                @else
+                {{$now[0]->nama_kegiatan}}
+                @endif
+                </marquee>
+            </h1>
+            <br>
+            <h1 id="wktSekarang" style="text-align:center; color:white;">
+                @if(count($now)<1)
+                --:--:--
+                @else
+                {{$now[0]->waktu_mulai_permohonan_peminjaman}} - 
+                {{$now[0]->waktu_selesai_permohonan_peminjaman}}
+                @endif
+            </h1>
         </div>
         
             
@@ -37,6 +49,28 @@
     <!-- /.container -->
     <script>
         window.onload = date_time('date_time');
+        window.onload = function(){
+                        setInterval(function(){
+                            var xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange=function(){
+                                if(xhttp.readyState==4 && xhttp.status==200){
+                                    $all = JSON.parse(xhttp.responseText);
+                                    $now = $all['now'][0];
+                                    $next = $all['next'][0];
+                                    if(Object.keys($now).length>0){
+                                        document.getElementById("kegSekarang").innerHTML=$now['nama_kegiatan'];
+                                        document.getElementById("wktSekarang").innerHTML=$now['waktu_mulai_permohonan_peminjaman']+" - "+$now['waktu_selesai_permohonan_peminjaman'];
+                                        document.getElementById("kotakbesar").style.backgroundColor="rgb(255,0,0)";
+                                    }else{
+                                        document.getElementById("kegSekarang").innerHTML="Tidak ada kegiatan";
+                                        document.getElementById("wktSekarang").innerHTML="--:--:--";
+                                        document.getElementById("kotakbesar").style.backgroundColor="rgb(0,255,0)";
+                                    }
+                                }
+                            };
+                            xhttp.open("get", "/feeder/"+document.getElementById("ruang").innerHTML, true);
+                            xhttp.send();
+                        }, 3000)}
     </script>
 
     <!-- jQuery -->

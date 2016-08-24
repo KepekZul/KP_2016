@@ -51,14 +51,14 @@ class umumController extends Controller
         $kegiatan = DB::select('call lihatKegiatan(?,?)', array($ruangan, $tanggal));
         return response()->json(['kegiatan'=>$kegiatan]);
     }
-    function feeder(){
-        $ruang='ruang sidang';
+    function feed($ruang){
         $now = DB::select('call lihatKegiatanSekarang(?)', array($ruang));
         $next = DB::select('call lihatKegiatanBerikut(?)', array($ruang));
-        return view('feeder', ['now'=>$now, 'next'=>$next]);
+        return view('feed', ['now'=>$now, 'next'=>$next, 'ruang'=>$ruang]);
     }
-
-    public function feed(){
-        return view ('feed');
+    function feeding($ruang){
+        $now = DB::select('call lihatKegiatanSekarang(?)', array($ruang));
+        $next = DB::select('call lihatKegiatanBerikut(?)', array($ruang));
+        return response()->json(['now'=>$now, 'next'=>$next, 'ruang'=>$ruang]);
     }
 }
