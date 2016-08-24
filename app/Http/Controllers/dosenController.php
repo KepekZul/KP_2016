@@ -14,11 +14,14 @@ class dosenController extends Controller
     	return view('indexDosen');
     }
     public function getStatus(Request $request){
-    	$status = DB::select('select status_dosen from daftar_status where nidn_daftar=?', array($request->session()->get('nidn_dosen')));
+    	$status = DB::select('select status_dosen from daftar_status where nidn_daftar=? limit 5', array($request->session()->get('nidn_dosen')));
     	return view('poststatus', ['status'=>$status]);
     }
     public function post(Request $request){
     	DB::select('call updateStatus(?,?,?)', array($request->session()->get('nidn_dosen'),$request['status_baru'],$request['isi']));
         return redirect()->back();
+    }
+    public function gantipassword(){
+        return view('gantipassword');
     }
 }

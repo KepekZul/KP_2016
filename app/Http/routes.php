@@ -43,12 +43,14 @@ Route::post('/admin/updatepeminjaman', 'adminController@updatepeminjaman')->midd
 Route::post('/admin/hapus', 'adminController@hapuspeminjaman')->middleware('admin');
 Route::post('/admin/tambahruang', 'adminController@tambahruang')->middleware('admin');
 Route::post('/admin/tambahinterval', 'adminController@tambahinterval')->middleware('admin');
+Route::post('/admin/gantipassword', 'adminController@gantipassword')->middleware('admin');
 
 //Dosen
 Route::get('/dosen', function(){return redirect('dosen/index');});
 Route::get('/dosen/index', 'dosenController@index')->middleware('dosen');
 Route::get('/dosen/status', 'dosenController@getStatus')->middleware('dosen');
 Route::post('/dosen/post', 'dosenController@post')->middleware('dosen');
+Route::get('/dosen/password', 'dosenController@gantipassword')->middleware('dosen');
 
 //umum
 Route::get('/index', 'umumController@index');

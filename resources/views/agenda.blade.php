@@ -34,8 +34,8 @@
             <div id="ck_slide">
                 @foreach($agenda as $isiagenda)
                     <div>
-                        <h1>{{$isiagenda->isi_agenda}}</h1>
-                        <h3>{{$isiagenda->tanggal_mulai_agenda}} sampai dengan {{$isiagenda->tanggal_selesai_agenda}}</h3>
+                        <h1 style="text-align:center">{{$isiagenda->isi_agenda}}</h1>
+                        <h3 style="text-align:center;">{{$isiagenda->tanggal_mulai_agenda}} sampai dengan {{$isiagenda->tanggal_selesai_agenda}}</h3>
                     </div>
                 @endforeach
             </div> 
@@ -44,13 +44,7 @@
         <hr>
 
         <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
+        @include('layouts.footer')
 
     </div>
     <!-- /.container -->

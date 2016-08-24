@@ -6,6 +6,8 @@
 
 <title>Dosen</title>
 <!-- Bootstrap Core CSS -->
+<link rel="icon" href="../img/if.png">
+
 <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
 <!-- Custom CSS -->

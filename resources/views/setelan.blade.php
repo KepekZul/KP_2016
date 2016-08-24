@@ -34,7 +34,7 @@
 
                 <div class="row">
                     <div class="well">
-                        <form method="post" role="form" action="/admin/tambahruang">
+                        <form name="ruang" method="post" role="form" action="/admin/tambahruang">
                             <h4>Tambah Ruangan</h4>
                             <input name="ruangan" type="text" class="form-control" style="width:70%;" required><br>
                             <button type="submit" class="btn btn-primary">Tambahkan</button>
@@ -48,7 +48,7 @@
                     </div>
                     <br>
                     <div class="well">
-                        <form method="post" role="form" action="/admin/tambahinterval">
+                        <form name="interval" method="post" role="form" action="/admin/tambahinterval">
                             <h4>Tambah Interval Peminjaman</h4>
                             <table style="width:70%">
                                 <tr>
@@ -70,6 +70,33 @@
                             </table>
                             <button type="submit" class="btn btn-primary">Tambahkan</button>
                         </form>
+                        @if(Session::has('interval_ok'))
+                        <span style="background-color:rgb(0,255,0);">{{Session::get('interval_ok')}}</span>
+                        @endif
+                    </div>
+                    <div class="well">
+                        <form name="password" method="post" role="form" action="/admin/gantipassword" onsubmit="return ceksama()">
+                            <h4>Ganti Password</h4>
+                            <hr>
+                            <h4>Password Lama</h4>
+                            <input name="passwordlama" type="password" style="width:60%; min-width:200px;" class="form-control" required><br>
+                            <h4>Password Baru</h4>
+                            <input name="passwordbaru1" type="password" style="width:60%; min-width:200px;" class="form-control" required><br>
+                            <h4>Password Baru</h4>
+                            <input name="passwordbaru2" type="password" style="width:60%; min-width:200px;"  class="form-control" required><br>
+                            <button type="submit" class="btn btn-primary">Ganti</button>
+                        </form>
+                        <script type="text/javascript">
+                            function ceksama(){
+                                if(document.forms["password"]["passwordbaru1"].value==document.forms["password"]["passwordbaru2"].value){
+                                    return true;
+                                }else{
+                                    alert('Password yang dimasukkan berbeda.')
+                                    return false;
+                                }
+                                alert('huehuehue');
+                            }
+                        </script>
                         @if(Session::has('interval_ok'))
                         <span style="background-color:rgb(0,255,0);">{{Session::get('interval_ok')}}</span>
                         @endif

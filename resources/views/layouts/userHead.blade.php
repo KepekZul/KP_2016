@@ -5,6 +5,7 @@
 <meta name="author" content="">
 
 <title>SI Peminjaman Ruangan dan Informasi Dosen</title>
+<link rel="icon" href="../img/if.png">
 
 <!-- Bootstrap Core CSS -->
 <link href="{{ URL::asset('css/bootstrap.min.css') }}" rel="stylesheet">

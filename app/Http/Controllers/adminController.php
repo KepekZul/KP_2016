@@ -110,4 +110,9 @@ class adminController extends Controller
         session::flash('interval_ok', 'Interval telah ditambahkan');
         return redirect()->back();
     }
+    public function gantipassword(Request $request){
+        $pesan = DB::select('call gantiPasswordAdmin(?,?,?)', array($request['passwordlama'], $request['passwordbaru1'], $request->session()->get('username_admin')));
+        session::flash('hasil', $pesan[0]->message);
+        return redirect()->back();
+    }
 }
