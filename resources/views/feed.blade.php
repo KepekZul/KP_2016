@@ -57,14 +57,17 @@
                                     $all = JSON.parse(xhttp.responseText);
                                     $now = $all['now'][0];
                                     $next = $all['next'][0];
-                                    if(Object.keys($now).length>0){
+                                    console.log($now);
+                                    if($now){
                                         document.getElementById("kegSekarang").innerHTML=$now['nama_kegiatan'];
                                         document.getElementById("wktSekarang").innerHTML=$now['waktu_mulai_permohonan_peminjaman']+" - "+$now['waktu_selesai_permohonan_peminjaman'];
                                         document.getElementById("kotakbesar").style.backgroundColor="rgb(255,0,0)";
+                                        console.log("ada");
                                     }else{
                                         document.getElementById("kegSekarang").innerHTML="Tidak ada kegiatan";
                                         document.getElementById("wktSekarang").innerHTML="--:--:--";
                                         document.getElementById("kotakbesar").style.backgroundColor="rgb(0,255,0)";
+                                        console.log("gak ada");
                                     }
                                 }
                             };
