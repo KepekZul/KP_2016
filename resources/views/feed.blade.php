@@ -16,6 +16,7 @@
     <div class="container">
         <div id="date_time"></div>
         <img class="logo" src="../img/if.png" alt="if">
+        <h2>Jurusan Teknik Informatika</h2>
         <h2><strong id="ruang">{{$ruang}}</strong></h2>
         @if(count($now)>0)
         <div id="kotakbesar" class="isi" style="background-color:rgb(255,0,0);">
@@ -42,8 +43,16 @@
         </div>
         <div id="keg"><h1>Kegiatan Selanjutnya</h1></div>
         <div id="nama">
-            <h3>NAMA KEGIATAN</h3>
-            <h3>WAKTU</h3>
+            <h3>
+                @if(count($next)>0)
+                Kegiatan: {{$next[0]->nama_kegiatan}}.<br>
+                Waktu: {{$next[0]->waktu_mulai_permohonan_peminjaman}} - 
+                {{$next[0]->waktu_selesai_permohonan_peminjaman}}
+                @else
+                Kegiatan: Tidak ada kegiatan.<br>
+                Waktu: --:--:--
+                @endif
+            </h3>
         </div>    
             
         
@@ -67,11 +76,13 @@
                                         document.getElementById("kegSekarang").innerHTML=$now['nama_kegiatan'];
                                         document.getElementById("wktSekarang").innerHTML=$now['waktu_mulai_permohonan_peminjaman']+" - "+$now['waktu_selesai_permohonan_peminjaman'];
                                         document.getElementById("kotakbesar").style.backgroundColor="rgb(255,0,0)";
+                                        document.getElementById("nama").innerHTML="<h3>Kegiatan: "+$next['nama_kegiatan']+"<br>Waktu: "+$next["waktu_mulai_permohonan_peminjaman"]+" - "+$next["waktu_selesai_permohonan_peminjaman"]+"</h3>";
                                         console.log("ada");
                                     }else{
-                                        document.getElementById("kegSekarang").innerHTML="Tidak ada kegiatan";
+                                        document.getElementById("kegSekarang").innerHTML="Tidak ada kegiatan.";
                                         document.getElementById("wktSekarang").innerHTML="--:--:--";
                                         document.getElementById("kotakbesar").style.backgroundColor="rgb(0,255,0)";
+                                        document.getElementById("nama").innerHTML="<h3>Kegiatan: Tidak ada kegiatan.<br>Waktu: --:--:--</h3>";
                                         console.log("gak ada");
                                     }
                                 }
