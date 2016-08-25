@@ -18,7 +18,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div id="contain">
 
         <hr>
 

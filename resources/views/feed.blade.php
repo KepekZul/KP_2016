@@ -13,9 +13,9 @@
     <!-- Navigation -->
 
     <!-- Page Content -->
-    <div class="container">
+    <div id="container">
         <div id="date_time"></div>
-        <img class="logo" src="../img/if.png" alt="if">
+        <img class="logo" src="../img/if2.png" alt="if">
         <h2>Jurusan Teknik Informatika</h2>
         <h2><strong id="ruang">{{$ruang}}</strong></h2>
         @if(count($now)>0)

@@ -3,7 +3,7 @@
 	padding-top: 40px;
 	padding-bottom: 40px;
 	float: center;
-	width: 500px;
+	width: 750px;
 	height: 350px;
 	display: block;
 }
@@ -12,7 +12,7 @@
 	position: absolute;
 	margin: 0px;
 	padding: 0px; 
-	width: 500px;
+	width: 750px;
 	display: block;			
 }
 h2, h4{
@@ -20,8 +20,15 @@ h2, h4{
 	float: center;
 }
 
-.container{
+#container{
 	margin: 20px;
+}
+
+#contain{
+	margin-top: 20px;
+	 margin-bottom: 20px; 
+	margin-left: 120px;
+	margin-right: 120px;
 }
 
 img.logo{
@@ -31,9 +38,9 @@ img.logo{
 	width: 70px;
 }
 
-.container h2{
-	margin-top: 20px;
-	margin-bottom: 30px;
+#container h2{
+	margin-top: 10px;
+	margin-bottom: 20px;
 	text-align: center;
 	font-family: sans-serif;
 	font-size: 40px;
