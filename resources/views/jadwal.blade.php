@@ -76,14 +76,23 @@
         </div>
             
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <h3>List Peminjaman</h3>
                 <div class="table-responsive">
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th>Waktu</th>
+                                <th>Tanggal Mulai</th>
+                                <th>Waktu Mulai</th>
+                                <th>Waktu Selesai</th>
                                 <th>Nama Kegiatan</th>
+                                <th>Ruang</th>
+                                <th>Badan Pelaksana Kegiatan</th>
+                                <th>Rutinitas Kegiatan</th>
+                                <th>Kali Peminjaman</th>
+                                <th>Peminjam</th>
+                                <th>No. Telepon Peminjam</th>
+                                <th>Email Peminjam</th>
                             </tr>
                         </thead>
                         <tbody id="daftar">
