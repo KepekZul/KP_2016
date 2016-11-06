@@ -27,4 +27,10 @@ class dosenController extends Controller
     public function tambahjadwaldosen(){
         return view('tambahjadwaldosen');
     }
+    public function listjadwaldosen(){
+        return view('listjadwaldosen');
+    }
+    public function editjadwaldosen(){
+        return view('editjadwaldosen');
+    }
 }

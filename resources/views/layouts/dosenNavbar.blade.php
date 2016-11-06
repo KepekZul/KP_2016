@@ -28,7 +28,7 @@
                         <a href="tambahjadwaldosen">Tambah Jadwal Rutin Dosen</a>
                     </li>
                     <li id="edit">
-                        <a href="editjadwaldosen">Edit Jadwal Rutin Dosen</a>
+                        <a href="listjadwaldosen">Edit Jadwal Rutin Dosen</a>
                     </li>
                     <li id="password">
                         <a href="password">Ganti Password</a>

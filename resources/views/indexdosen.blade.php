@@ -85,7 +85,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="editjadwaldosen">
+                            <a href="listjadwaldosen">
                                 <div class="panel-footer">
                                     <span class="pull-left">Lihat</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
