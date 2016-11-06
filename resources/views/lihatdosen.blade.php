@@ -54,36 +54,59 @@
         <hr>
 
         <div class="row">
-            <div class="col-lg-8">
-                <ul class="list-group" id="kotakDosen">
-                </ul>
+            <div class="col-lg-12">
+                <ul class="list-group" id="kotakDosen"></ul>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h3>Jadwal Rutin Dosen</h3>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tanggal</th>
+                                        <th>Waktu</th>
+                                        <th>Kegiatan</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="daftar">
+                                    <tr>
+                                        <td>kosong</td>
+                                        <td>kosong</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-<script type="text/javascript">
-function getList(){
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange=function(){
-        if(xhttp.readyState==4 && xhttp.status==200){
-            $all = JSON.parse(xhttp.responseText);
-            $isiHTML="";
-            var cont = Object.keys($all["dataDosen"]).length;
-            console.log(cont);
-            for(i=0; i<cont; i++){
-                $data = $all["dataDosen"][i];
-                $nama = $data["nama_dosen"];
-                $nidn = $data["NIDN_dosen"];
-                $posisi = $data["status_terkini"];
-                $pengumuman = $data["pengumuman_terkini"];
-                $isiHTML=$isiHTML+"<li class='list-group-item'>Dosen: "+$nama+"<br>"+"NIDN: "+$nidn+"<br>"+"Posisi: "+$posisi+"<br>"+"Pengumuman: "+$pengumuman+"<br>";
-            }
-            console.log($isiHTML);
-            document.getElementById("kotakDosen").innerHTML=$isiHTML;
-        }
-    };
-    xhttp.open("get", "/lihatdosen/data/"+document.getElementById("kunci").value, true);
-    xhttp.send();
-};
-</script>
+
+        <script type="text/javascript">
+        function getList(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange=function(){
+                if(xhttp.readyState==4 && xhttp.status==200){
+                    $all = JSON.parse(xhttp.responseText);
+                    $isiHTML="";
+                    var cont = Object.keys($all["dataDosen"]).length;
+                    console.log(cont);
+                    for(i=0; i<cont; i++){
+                        $data = $all["dataDosen"][i];
+                        $nama = $data["nama_dosen"];
+                        $nidn = $data["NIDN_dosen"];
+                        $posisi = $data["status_terkini"];
+                        $pengumuman = $data["pengumuman_terkini"];
+                        $isiHTML=$isiHTML+"<li class='list-group-item'>Dosen: "+$nama+"<br>"+"NIDN: "+$nidn+"<br>"+"Posisi: "+$posisi+"<br>"+"Pengumuman: "+$pengumuman+"<br>";
+                    }
+                    console.log($isiHTML);
+                    document.getElementById("kotakDosen").innerHTML=$isiHTML;
+                }
+            };
+            xhttp.open("get", "/lihatdosen/data/"+document.getElementById("kunci").value, true);
+            xhttp.send();
+        };
+        </script>
         <!-- Footer -->
         @include('layouts.footer')
 
