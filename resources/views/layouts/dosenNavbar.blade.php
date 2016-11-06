@@ -24,6 +24,12 @@
                     <li id="status">
                         <a href="status">Post Status Dosen</a>
                     </li>
+                    <li id="tambah">
+                        <a href="tambahjadwaldosen">Tambah Jadwal Rutin Dosen</a>
+                    </li>
+                    <li id="edit">
+                        <a href="editjadwaldosen">Edit Jadwal Rutin Dosen</a>
+                    </li>
                     <li id="password">
                         <a href="password">Ganti Password</a>
                     </li>

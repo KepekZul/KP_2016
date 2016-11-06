@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @include('layouts.adminHead')
+    @include('layouts.dosenHead')
     <script type="text/javascript">
         function ini(){
             document.getElementById("index").className="active";
@@ -42,6 +42,72 @@
                                 </div>
                             </div>
                             <a href="status">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <!--<i class="fa fa-comments fa-5x"></i>-->
+                                        <img style="height:80px" src="../img/rutin.jpg" alt="">
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div><h3>Tambah Jadwal Rutin Dosen</h3></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="tambahjadwaldosen">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <!--<i class="fa fa-comments fa-5x"></i>-->
+                                        <img style="height:80px" src="../img/edit.jpg" alt="">
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div><h3>Edit Jadwal Rutin Dosen</h3></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="editjadwaldosen">
+                                <div class="panel-footer">
+                                    <span class="pull-left">Lihat</span>
+                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <!--<i class="fa fa-comments fa-5x"></i>-->
+                                        <img style="height:80px" src="../img/password.png" alt="">
+                                    </div>
+                                    <div class="col-xs-9 text-right">
+                                        <div><h3>Ganti Password</h3></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="password">
                                 <div class="panel-footer">
                                     <span class="pull-left">Lihat</span>
                                     <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>

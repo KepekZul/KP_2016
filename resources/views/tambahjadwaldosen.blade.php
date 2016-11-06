@@ -21,7 +21,7 @@
                 <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
-                        <h1 class="page-header">Ganti Password</h1>
+                        <h1 class="page-header">Tambah Jadwal Rutin Dosen</h1>
                     </div>
                 </div>
                 <!-- /.row -->
@@ -29,19 +29,19 @@
                 <div class="row">
                     <div class="well">
                         <form role="form" action="post" method="POST">
-                            <h4>Password Lama</h4>
+                            <h4>Tanggal:</h4>
                             <div class="form-group">
-                                <input name='passlama' type='password' class="form-control" list='listid' autocomplete="off">
+                                <input name='status_baru' type='date' class="form-control">
                             </div>
-                            <h4>Password Baru</h4>
+                            <h4>Waktu:</h4>
                             <div class="form-group">
-                                <input name='passbaru1' type='password' class="form-control" list='listid' autocomplete="off">
+                                <input name='status_baru' type='time' class="form-control">
                             </div>
-                            <h4>Password Baru (Ketikkan Sekali Lagi)</h4>
+                            <h4>Kegiatan</h4>
                             <div class="form-group">
-                                <input name='passbaru2' type='password' class="form-control" list='listid' autocomplete="off">
+                                <textarea name="isi" type='text' class="form-control"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Ubah</button>
+                            <button type="submit" class="btn btn-primary">Tambah</button>
                         </form>
                     </div>
                 </div>

@@ -24,4 +24,7 @@ class dosenController extends Controller
     public function gantipassword(){
         return view('gantipassword');
     }
+    public function tambahjadwaldosen(){
+        return view('tambahjadwaldosen');
+    }
 }
