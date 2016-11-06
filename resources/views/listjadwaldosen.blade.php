@@ -5,7 +5,7 @@
 @include('layouts.dosenHead')
    <script type="text/javascript">
         function ini(){
-            document.getElementById("status").className="active";
+            document.getElementById("edit").className="active";
         }
     </script>
 </head>

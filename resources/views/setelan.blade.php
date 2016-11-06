@@ -35,8 +35,8 @@
                 <div class="row">
                     <div class="well">
                         <form name="ruang" method="post" role="form" action="/admin/tambahruang">
-                            <h4>Tambah Ruangan</h4>
-                            <input name="ruangan" type="text" class="form-control" style="width:70%;" required><br>
+                            <h4><strong>Tambah Ruangan</strong></h4>
+                            <input name="ruangan" type="text" class="form-control" required><br>
                             <button type="submit" class="btn btn-primary">Tambahkan</button>
                         </form>
                         @if(Session::has('ruang_ok'))
@@ -49,14 +49,15 @@
                     <br>
                     <div class="well">
                         <form name="interval" method="post" role="form" action="/admin/tambahinterval">
-                            <h4>Tambah Interval Peminjaman</h4>
-                            <table style="width:70%">
+                            <h4><strong>Tambah Interval Peminjaman</strong></h4>
+                            <hr>
+                            <table style="width:100%">
                                 <tr>
                                     <th>
-                                        Interval Hari
+                                        <h4>Interval Hari</h4>
                                     </th>
                                     <th>
-                                        Keterangan
+                                        <h4>Keterangan</h4>
                                     </th>
                                 </tr>
                                 <tr>
@@ -76,14 +77,14 @@
                     </div>
                     <div class="well">
                         <form name="password" method="post" role="form" action="/admin/gantipassword" onsubmit="return ceksama()">
-                            <h4>Ganti Password</h4>
+                            <h4><strong>Ganti Password</strong></h4>
                             <hr>
                             <h4>Password Lama</h4>
-                            <input name="passwordlama" type="password" style="width:60%; min-width:200px;" class="form-control" required><br>
+                            <input name="passwordlama" type="password" class="form-control" required><br>
                             <h4>Password Baru</h4>
-                            <input name="passwordbaru1" type="password" style="width:60%; min-width:200px;" class="form-control" required><br>
-                            <h4>Password Baru</h4>
-                            <input name="passwordbaru2" type="password" style="width:60%; min-width:200px;"  class="form-control" required><br>
+                            <input name="passwordbaru1" type="password" class="form-control" required><br>
+                            <h4>Password Baru (Ketikkan Sekali Lagi)</h4>
+                            <input name="passwordbaru2" type="password" class="form-control" required><br>
                             <button type="submit" class="btn btn-primary">Ganti</button>
                         </form>
                         <script type="text/javascript">

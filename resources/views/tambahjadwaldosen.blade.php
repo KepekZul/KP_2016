@@ -5,7 +5,7 @@
 @include('layouts.dosenHead')
    <script type="text/javascript">
         function ini(){
-            document.getElementById("status").className="active";
+            document.getElementById("tambah").className="active";
         }
     </script>
 </head>
