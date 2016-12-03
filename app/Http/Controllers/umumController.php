@@ -21,7 +21,8 @@ class umumController extends Controller
     }
     public function reservasi(){
         $ruangan = DB::select('select * from ruangan');
-    	return view('jadwal', ['ruangan'=>$ruangan]);
+        $peminjaman = DB::select('SELECT dp.nama_kegiatan, dp.nama_ruangan, wk.tanggal_kegiatan, wk.waktu_mulai_kegiatan, wk.waktu_selesai_kegiatan FROM daftar_permohonan dp, waktu_kegiatan wk WHERE dp.kode_permohonan = wk.kode_permohonan ORDER BY wk.tanggal_kegiatan ASC;');
+    	return view('jadwal', ['ruangan'=>$ruangan, 'peminjaman'=>$peminjaman]);
     }
     public function dosen(){
         $listDosen = DB::select('select nama_dosen from dosen');

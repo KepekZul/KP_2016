@@ -156,9 +156,9 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Skecskes\Calendar\CalendarServiceProvider::class,
+        //Skecskes\Calendar\CalendarServiceProvider::class,
         //Arkhas\Calendar\CalendarServiceProvider::class,
-        Todstoychev\CalendarEvents\CalendarEventsServiceProvider::class,
+        //Todstoychev\CalendarEvents\CalendarEventsServiceProvider::class,
     ],
 
     /*

@@ -5,29 +5,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    @include('layouts.userHead')
    <script type="text/javascript">
-   function cekRuang(){
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange=function(){
-            if(xhttp.readyState==4 && xhttp.status==200){
-                $all = JSON.parse(xhttp.responseText);
-                var cont = Object.keys($all["kegiatan"]).length;
-                if(cont>0){
-                    $isiHtml="";
-                    for(i=0; i<cont; i++){
-                        $mulai=$all["kegiatan"][i]["waktu_mulai"];
-                        $selesai=$all["kegiatan"][i]["waktu_selesai"];
-                        $kegiatan=$all["kegiatan"][i]["nama_kegiatan"];
-                        $isiHtml=$isiHtml+"<tr><td>"+$mulai+" sampai "+$selesai+"</td><td>"+$kegiatan+"</tr>";
-                    }
-                    document.getElementById("daftar").innerHTML=$isiHtml;
-                }else{
-                    document.getElementById("daftar").innerHTML="<tr><td>kosong</td><td>kosong</td></tr>";
-                }
-            }
-        };
-        xhttp.open("get", "/reservasi/"+document.getElementById("ruang").value+"/"+document.getElementById("tanggal").value, true);
-        xhttp.send();
+   function filterRuang(){
+    var i;
+    var KeyRuangan = document.getElementById("ruang");
+    var table = document.getElementById("tableJadwal");
+    var tr = table.getElementsByTagName("tr");
+    for (i = 1; i < tr.length; i++) {
+    var td = tr[i].getElementsByTagName("td")[4];
+     if (td) {
+       if (td.innerHTML.indexOf(KeyRuangan.options[KeyRuangan.selectedIndex].text) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+       }
     }
+}
+}
    </script>
 </head>
 
@@ -50,8 +43,8 @@
             <div class="col-lg-6">
             <!-- Blog Search Well -->
                 <div class="well">
-                    <h4>Pilih Ruang untuk Melihat List Peminjaman</h4>
-                    <div class="input-group" style="width:80%;" onchange="cekRuang()">
+                    <h4>Ruang</h4>
+                    <div class="input-group" style="width:80%;" onchange="filterRuang();">
                         <select name="ruangan" id="ruang" type="text" class="form-control" style="min-width:250px; width:100%;" autocomplete="false">
                             @foreach($ruangan as $ruang)
                             <option>{{$ruang->nama_ruangan}}</option>
@@ -63,43 +56,29 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-6">
-            <!-- Blog Search Well -->
-                <div class="well">
-                    <h4>Pilih Tanggal untuk Melihat List Peminjaman</h4>
-                    <div class="input-group" style="width:80%;" onchange="cekRuang()">
-                        <input name="tanggal" id="tanggal" type="date" class="form-control" style="min-width:250px; width:100%;" autocomplete="false">
-                    </div>
-                    <!-- /.input-group -->
-                </div>
-            </div>
-        </div>
-            
-        <div class="row">
             <div class="col-lg-12">
                 <h3>List Peminjaman</h3>
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table id="tableJadwal" class="table table-hover">
                         <thead>
                             <tr>
+                                <th>Nama Kegiatan</th>
                                 <th>Tanggal Mulai</th>
                                 <th>Waktu Mulai</th>
                                 <th>Waktu Selesai</th>
-                                <th>Nama Kegiatan</th>
                                 <th>Ruang</th>
-                                <th>Badan Pelaksana Kegiatan</th>
-                                <th>Rutinitas Kegiatan</th>
-                                <th>Kali Peminjaman</th>
-                                <th>Peminjam</th>
-                                <th>No. Telepon Peminjam</th>
-                                <th>Email Peminjam</th>
                             </tr>
                         </thead>
                         <tbody id="daftar">
+                            @foreach($peminjaman as $daftarPinjam)
                             <tr>
-                                <td>kosong</td>
-                                <td>kosong</td>
+                                <td>{{$daftarPinjam->nama_kegiatan}}</td>
+                                <td>{{$daftarPinjam->tanggal_kegiatan}}</td>
+                                <td>{{$daftarPinjam->waktu_mulai_kegiatan}}</td>
+                                <td>{{$daftarPinjam->waktu_selesai_kegiatan}}</td>
+                                <td>{{$daftarPinjam->nama_ruangan}}</td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
