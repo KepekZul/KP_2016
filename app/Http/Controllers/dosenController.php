@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Session;
+
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -23,6 +25,11 @@ class dosenController extends Controller
     }
     public function gantipassword(){
         return view('gantipassword');
+    }
+    public function gantipass(Request $request){
+        $pesan=DB::select('call gantiPasswordDosen(?,?,?)', array($request['passlama'], $request['passbaru1'], $request->session()->get('nidn_dosen')));
+        session::flash('hasil', $pesan[0]->message);
+        return redirect()->back();
     }
     public function tambahjadwaldosen(){
         return view('tambahjadwaldosen');

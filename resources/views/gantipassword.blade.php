@@ -28,7 +28,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="well">
-                        <form role="form" action="post" method="POST">
+                        <form name="password" role="form" action="/dosen/gantipass" method="POST" onsubmit="ceksama()">
                             <h4>Password Lama</h4>
                             <div class="form-group">
                                 <input name='passlama' type='password' class="form-control" list='listid' autocomplete="off">
@@ -42,6 +42,17 @@
                                 <input name='passbaru2' type='password' class="form-control" list='listid' autocomplete="off">
                             </div>
                             <button type="submit" class="btn btn-primary">Ubah</button>
+                            <script type="text/javascript">
+                            function ceksama(){
+                                if(document.forms["password"]["passbaru1"].value==document.forms["password"]["passbaru2"].value){
+                                    return true;
+                                }else{
+                                    alert('Password yang dimasukkan berbeda.')
+                                    return false;
+                                }
+                                alert('huehuehue');
+                            }
+                        </script>
                         </form>
                     </div>
                 </div>

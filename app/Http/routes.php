@@ -54,6 +54,8 @@ Route::get('/dosen/password', 'dosenController@gantipassword')->middleware('dose
 Route::get('/dosen/tambahjadwaldosen', 'dosenController@tambahjadwaldosen')->middleware('dosen');
 Route::get('/dosen/listjadwaldosen', 'dosenController@listjadwaldosen')->middleware('dosen');
 Route::get('/dosen/editjadwaldosen', 'dosenController@editjadwaldosen')->middleware('dosen');
+Route::post('/dosen/gantipass', 'dosenController@gantipass')->middleware('dosen');
+
 
 //umum
 Route::get('/index', 'umumController@index');

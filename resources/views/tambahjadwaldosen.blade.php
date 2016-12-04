@@ -29,9 +29,17 @@
                 <div class="row">
                     <div class="well">
                         <form role="form" action="post" method="POST">
-                            <h4>Tanggal:</h4>
-                            <div class="form-group">
-                                <input name='status_baru' type='date' class="form-control">
+                            <h4>Hari</h4>
+                    <div class="input-group">
+                        <select name="ruangan" class="form-control">
+                                    <option>Senin</option>
+                                    <option>Selasa</option>
+                                    <option>Rabu</option>
+                                    <option>Kamis</option>
+                                    <option>Jumat</option>
+                                    <option>Sabtu</option>
+                                    <option>Minggu</option>
+                                </select>
                             </div>
                             <h4>Waktu:</h4>
                             <div class="form-group">

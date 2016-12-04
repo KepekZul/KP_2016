@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v8.6 Beta2
-MySQL - 5.5.5-10.1.10-MariaDB : Database - project_kp_2016
+MySQL - 5.5.45 : Database - project_kp_2016
 *********************************************************************
 */
 
@@ -14,8 +14,6 @@ MySQL - 5.5.5-10.1.10-MariaDB : Database - project_kp_2016
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 /*Table structure for table `admin` */
 
-DROP TABLE IF EXISTS `admin`;
-
 CREATE TABLE `admin` (
   `username_admin` varchar(20) NOT NULL,
   `password_admin` varchar(128) NOT NULL,
@@ -24,11 +22,11 @@ CREATE TABLE `admin` (
 
 /*Data for the table `admin` */
 
-insert  into `admin`(`username_admin`,`password_admin`) values ('admin','admin'),('ayu','29c65f781a1068a41f735e1b092546de'),('lala','lala');
+insert  into `admin`(`username_admin`,`password_admin`) values ('admin','2e3817293fc275dbee74bd71ce6eb056');
+insert  into `admin`(`username_admin`,`password_admin`) values ('ayu','2e3817293fc275dbee74bd71ce6eb056');
+insert  into `admin`(`username_admin`,`password_admin`) values ('lala','2e3817293fc275dbee74bd71ce6eb056');
 
 /*Table structure for table `admin_permohonan` */
-
-DROP TABLE IF EXISTS `admin_permohonan`;
 
 CREATE TABLE `admin_permohonan` (
   `username_admin_antara` varchar(30) DEFAULT NULL,
@@ -41,9 +39,12 @@ CREATE TABLE `admin_permohonan` (
 
 /*Data for the table `admin_permohonan` */
 
-/*Table structure for table `agenda` */
+insert  into `admin_permohonan`(`username_admin_antara`,`kode_permohonan_antara`) values ('ayu','96900620425887745');
+insert  into `admin_permohonan`(`username_admin_antara`,`kode_permohonan_antara`) values ('ayu','96900620425887746');
+insert  into `admin_permohonan`(`username_admin_antara`,`kode_permohonan_antara`) values ('ayu','96900620425887747');
+insert  into `admin_permohonan`(`username_admin_antara`,`kode_permohonan_antara`) values ('ayu','96901790317936640');
 
-DROP TABLE IF EXISTS `agenda`;
+/*Table structure for table `agenda` */
 
 CREATE TABLE `agenda` (
   `isi_agenda` varchar(300) NOT NULL,
@@ -58,11 +59,10 @@ CREATE TABLE `agenda` (
 
 /*Data for the table `agenda` */
 
+insert  into `agenda`(`isi_agenda`,`tanggal_mulai_agenda`,`admin`,`tanggal_selesai_agenda`,`timestamp_agenda`) values ('Evaluasi AUN','2016-12-03','ayu','2016-12-05','0000-00-00 00:00:00');
 insert  into `agenda`(`isi_agenda`,`tanggal_mulai_agenda`,`admin`,`tanggal_selesai_agenda`,`timestamp_agenda`) values ('kunjungan dari SMA blablabla','2016-11-07','ayu','2016-11-07','2016-11-06 15:39:16');
 
 /*Table structure for table `aktivitas` */
-
-DROP TABLE IF EXISTS `aktivitas`;
 
 CREATE TABLE `aktivitas` (
   `catatan_aktivitas` varchar(100) NOT NULL,
@@ -75,55 +75,22 @@ CREATE TABLE `aktivitas` (
 
 /*Data for the table `aktivitas` */
 
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu mengisi agenda','0000-00-00 00:00:00','ayu');
 insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu mengisi agenda','2016-11-06 15:39:16','ayu');
-
-/*Table structure for table `calendar_events` */
-
-DROP TABLE IF EXISTS `calendar_events`;
-
-CREATE TABLE `calendar_events` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `start` datetime NOT NULL,
-  `end` datetime DEFAULT NULL,
-  `all_day` tinyint(1) DEFAULT NULL,
-  `border_color` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `background_color` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `text_color` varchar(7) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `calendar_events` */
-
-/*Table structure for table `calendar_events_repeat_dates` */
-
-DROP TABLE IF EXISTS `calendar_events_repeat_dates`;
-
-CREATE TABLE `calendar_events_repeat_dates` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `start` datetime NOT NULL,
-  `end` datetime DEFAULT NULL,
-  `calendar_event_id` int(10) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `calendar_events_repeat_dates_calendar_event_id_foreign` (`calendar_event_id`),
-  CONSTRAINT `calendar_events_repeat_dates_calendar_event_id_foreign` FOREIGN KEY (`calendar_event_id`) REFERENCES `calendar_events` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `calendar_events_repeat_dates` */
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('Admin ayu menghapus jadwal dengan kode 96900620425887745','2016-12-03 23:33:42','ayu');
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu menyetujui permohonan dengan kode 96900620425887746','2016-12-03 23:44:52','ayu');
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu menyetujui permohonan dengan kode 96900620425887747','2016-12-04 00:06:32','ayu');
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu mengubah peminjaman 96900620425887747','2016-12-04 00:10:18','ayu');
+insert  into `aktivitas`(`catatan_aktivitas`,`waktu_aktivitas`,`username_aktivitas`) values ('ayu menyetujui permohonan dengan kode 96901790317936640','2016-12-04 14:45:05','ayu');
 
 /*Table structure for table `daftar_permohonan` */
-
-DROP TABLE IF EXISTS `daftar_permohonan`;
 
 CREATE TABLE `daftar_permohonan` (
   `nama_pemohon_peminjaman` varchar(100) NOT NULL,
   `kode_permohonan` varchar(17) NOT NULL,
   `status_permohonan` varchar(20) NOT NULL DEFAULT 'Diproses',
   `nama_kegiatan` varchar(200) NOT NULL,
-  `tanggal_masuk_permohonan` datetime NOT NULL ,
+  `tanggal_masuk_permohonan` datetime NOT NULL,
   `tanggal_mulai_permohonan_peminjaman` date NOT NULL,
   `waktu_mulai_permohonan_peminjaman` time NOT NULL,
   `waktu_selesai_permohonan_peminjaman` time NOT NULL,
@@ -142,9 +109,12 @@ CREATE TABLE `daftar_permohonan` (
 
 /*Data for the table `daftar_permohonan` */
 
-/*Table structure for table `daftar_status` */
+insert  into `daftar_permohonan`(`nama_pemohon_peminjaman`,`kode_permohonan`,`status_permohonan`,`nama_kegiatan`,`tanggal_masuk_permohonan`,`tanggal_mulai_permohonan_peminjaman`,`waktu_mulai_permohonan_peminjaman`,`waktu_selesai_permohonan_peminjaman`,`badan_pelaksana_kegiatan`,`nama_ruangan`,`rutinitas_peminjaman`,`kali_peminjaman`) values ('Kevin Zulkarnain Yuseti','96900620425887745','Dihapus','Kuliah Umum','2016-12-03 23:13:12','2016-12-05','09:00:00','15:00:00','Jurusan','Aula',1,1);
+insert  into `daftar_permohonan`(`nama_pemohon_peminjaman`,`kode_permohonan`,`status_permohonan`,`nama_kegiatan`,`tanggal_masuk_permohonan`,`tanggal_mulai_permohonan_peminjaman`,`waktu_mulai_permohonan_peminjaman`,`waktu_selesai_permohonan_peminjaman`,`badan_pelaksana_kegiatan`,`nama_ruangan`,`rutinitas_peminjaman`,`kali_peminjaman`) values ('Kevin Zulkarnai Yuseti','96900620425887746','Disetujui','OKKBK','2016-12-03 23:44:44','2016-12-06','07:00:00','10:00:00','Jurusan','Aula',1,1);
+insert  into `daftar_permohonan`(`nama_pemohon_peminjaman`,`kode_permohonan`,`status_permohonan`,`nama_kegiatan`,`tanggal_masuk_permohonan`,`tanggal_mulai_permohonan_peminjaman`,`waktu_mulai_permohonan_peminjaman`,`waktu_selesai_permohonan_peminjaman`,`badan_pelaksana_kegiatan`,`nama_ruangan`,`rutinitas_peminjaman`,`kali_peminjaman`) values ('Kevin Zulkarnain Yuseti','96900620425887747','Disetujui','Senam Indoor','2016-12-04 00:06:27','2016-12-07','06:00:00','09:00:00','Jurusan','IF-105',7,4);
+insert  into `daftar_permohonan`(`nama_pemohon_peminjaman`,`kode_permohonan`,`status_permohonan`,`nama_kegiatan`,`tanggal_masuk_permohonan`,`tanggal_mulai_permohonan_peminjaman`,`waktu_mulai_permohonan_peminjaman`,`waktu_selesai_permohonan_peminjaman`,`badan_pelaksana_kegiatan`,`nama_ruangan`,`rutinitas_peminjaman`,`kali_peminjaman`) values ('Kevin ZUlkarnain Yuseti','96901790317936640','Disetujui','ini itu','2016-12-04 14:44:55','2016-12-08','17:00:00','19:00:00','Jurusan','Ruang Sidang',1,100);
 
-DROP TABLE IF EXISTS `daftar_status`;
+/*Table structure for table `daftar_status` */
 
 CREATE TABLE `daftar_status` (
   `NIDN_daftar` varchar(10) NOT NULL,
@@ -158,8 +128,6 @@ CREATE TABLE `daftar_status` (
 
 /*Table structure for table `dosen` */
 
-DROP TABLE IF EXISTS `dosen`;
-
 CREATE TABLE `dosen` (
   `nama_dosen` varchar(60) NOT NULL,
   `NIDN_dosen` varchar(10) NOT NULL,
@@ -172,36 +140,22 @@ CREATE TABLE `dosen` (
 
 /*Data for the table `dosen` */
 
-insert  into `dosen`(`nama_dosen`,`NIDN_dosen`,`status_terkini`,`pengumuman_terkini`,`password_dosen`) values ('ayu','5113100072','di ruangan','-','29c65f781a1068a41f735e1b092546de');
+insert  into `dosen`(`nama_dosen`,`NIDN_dosen`,`status_terkini`,`pengumuman_terkini`,`password_dosen`) values ('ayu','5113100072','di ruangan','-','2e3817293fc275dbee74bd71ce6eb056');
 
-/*Table structure for table `migrations` */
+/*Table structure for table `kegiatan_rutn` */
 
-DROP TABLE IF EXISTS `migrations`;
+CREATE TABLE `kegiatan_rutn` (
+  `NIDN_dosen` varchar(10) DEFAULT NULL,
+  `hari_rutin` varchar(12) DEFAULT NULL,
+  `kegiatan_rutin` varchar(300) DEFAULT NULL,
+  `waktu_rutin` time DEFAULT NULL,
+  KEY `FK_kegiatan_rutn` (`NIDN_dosen`),
+  CONSTRAINT `FK_kegiatan_rutn` FOREIGN KEY (`NIDN_dosen`) REFERENCES `dosen` (`NIDN_dosen`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `migrations` (
-  `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `migrations` */
-
-/*Table structure for table `password_resets` */
-
-DROP TABLE IF EXISTS `password_resets`;
-
-CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  KEY `password_resets_email_index` (`email`),
-  KEY `password_resets_token_index` (`token`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `password_resets` */
+/*Data for the table `kegiatan_rutn` */
 
 /*Table structure for table `pemohon` */
-
-DROP TABLE IF EXISTS `pemohon`;
 
 CREATE TABLE `pemohon` (
   `nama_pemohon` varchar(100) NOT NULL,
@@ -212,14 +166,15 @@ CREATE TABLE `pemohon` (
 
 /*Data for the table `pemohon` */
 
-/*Table structure for table `pengumuman` */
+insert  into `pemohon`(`nama_pemohon`,`nomor_telepon_pemohon`,`email_pemohon`) values ('Kevin Zulkarnai Yuseti','08563649409','kevinyuseti@yahoo.com');
+insert  into `pemohon`(`nama_pemohon`,`nomor_telepon_pemohon`,`email_pemohon`) values ('Kevin Zulkarnain Yuseti','08563649409','kevinyuseti@yahoo.com');
 
-DROP TABLE IF EXISTS `pengumuman`;
+/*Table structure for table `pengumuman` */
 
 CREATE TABLE `pengumuman` (
   `isi_pengumuman` varchar(300) NOT NULL,
   `NIDN_pengumuman` varchar(10) DEFAULT NULL,
-  `waktu_pengumuman` datetime NOT NULL ,
+  `waktu_pengumuman` datetime NOT NULL,
   PRIMARY KEY (`waktu_pengumuman`),
   KEY `FK_pengumuman` (`NIDN_pengumuman`),
   CONSTRAINT `FK_pengumuman` FOREIGN KEY (`NIDN_pengumuman`) REFERENCES `dosen` (`NIDN_dosen`) ON DELETE NO ACTION ON UPDATE CASCADE
@@ -229,8 +184,6 @@ CREATE TABLE `pengumuman` (
 
 /*Table structure for table `ruangan` */
 
-DROP TABLE IF EXISTS `ruangan`;
-
 CREATE TABLE `ruangan` (
   `nama_ruangan` varchar(100) NOT NULL,
   PRIMARY KEY (`nama_ruangan`)
@@ -238,39 +191,25 @@ CREATE TABLE `ruangan` (
 
 /*Data for the table `ruangan` */
 
-/*Table structure for table `rutinitas` */
+insert  into `ruangan`(`nama_ruangan`) values ('Aula');
+insert  into `ruangan`(`nama_ruangan`) values ('IF-105');
+insert  into `ruangan`(`nama_ruangan`) values ('Ruang Sidang');
 
-DROP TABLE IF EXISTS `rutinitas`;
+/*Table structure for table `rutinitas` */
 
 CREATE TABLE `rutinitas` (
   `frekwensi_rutinitas` int(11) NOT NULL AUTO_INCREMENT,
   `keterangan_rutinitas` varchar(15) NOT NULL,
   PRIMARY KEY (`frekwensi_rutinitas`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 /*Data for the table `rutinitas` */
 
-/*Table structure for table `users` */
-
-DROP TABLE IF EXISTS `users`;
-
-CREATE TABLE `users` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `users` */
+insert  into `rutinitas`(`frekwensi_rutinitas`,`keterangan_rutinitas`) values (1,'Tiap Hari');
+insert  into `rutinitas`(`frekwensi_rutinitas`,`keterangan_rutinitas`) values (7,'Tiap Minggu');
+insert  into `rutinitas`(`frekwensi_rutinitas`,`keterangan_rutinitas`) values (14,'Tiap Dua Minggu');
 
 /*Table structure for table `waktu_kegiatan` */
-
-DROP TABLE IF EXISTS `waktu_kegiatan`;
 
 CREATE TABLE `waktu_kegiatan` (
   `kode_permohonan` varchar(17) NOT NULL,
@@ -286,9 +225,113 @@ CREATE TABLE `waktu_kegiatan` (
 
 /*Data for the table `waktu_kegiatan` */
 
-/* Procedure structure for procedure `editAgenda` */
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96900620425887747','06:00:00','2016-12-07','09:00:00','IF-105');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96900620425887747','06:00:00','2016-12-14','09:00:00','IF-105');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96900620425887747','06:00:00','2016-12-21','09:00:00','IF-105');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96900620425887747','06:00:00','2016-12-28','09:00:00','IF-105');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96900620425887746','07:00:00','2016-12-06','10:00:00','Aula');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-08','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-09','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-10','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-11','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-12','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-13','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-14','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-15','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-16','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-17','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-18','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-19','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-20','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-21','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-22','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-23','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-24','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-25','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-26','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-27','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-28','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-29','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-30','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2016-12-31','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-01','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-02','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-03','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-04','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-05','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-06','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-07','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-08','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-09','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-10','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-11','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-12','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-13','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-14','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-15','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-16','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-17','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-18','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-19','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-20','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-21','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-22','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-23','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-24','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-25','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-26','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-27','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-28','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-29','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-30','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-01-31','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-01','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-02','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-03','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-04','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-05','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-06','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-07','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-08','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-09','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-10','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-11','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-12','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-13','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-14','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-15','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-16','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-17','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-18','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-19','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-20','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-21','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-22','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-23','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-24','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-25','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-26','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-27','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-02-28','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-01','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-02','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-03','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-04','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-05','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-06','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-07','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-08','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-09','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-10','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-11','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-12','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-13','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-14','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-15','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-16','19:00:00','Ruang Sidang');
+insert  into `waktu_kegiatan`(`kode_permohonan`,`waktu_mulai_kegiatan`,`tanggal_kegiatan`,`waktu_selesai_kegiatan`,`nama_ruangan`) values ('96901790317936640','17:00:00','2017-03-17','19:00:00','Ruang Sidang');
 
-/*!50003 DROP PROCEDURE IF EXISTS  `editAgenda` */;
+/* Procedure structure for procedure `editAgenda` */
 
 DELIMITER $$
 
@@ -299,15 +342,13 @@ BEGIN
 	call isiAgenda(isiAgenda, tanggalMulai, usernameAdmin, tanggalSelesai);
 	insert into aktivitas (catatan_aktivitas, username_aktivitas)
 	values (concat(usernamAdmin, ' mengubah agenda dengan kode',timelogAgenda), usernameAdmin);
-	insert into aktivitas(catatan_aktivitas, username_aktivitas)
-	values(concat(usernameAdmin, ' menyunting agenda ', timelogAgenda), usernameAdmin);
+	insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	values(concat(usernameAdmin, ' menyunting agenda ', timelogAgenda), usernameAdmin, current_timestamp());
 	commit;
     END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `gantiPassword` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `gantiPassword` */;
 
 DELIMITER $$
 
@@ -320,21 +361,40 @@ BEGIN
 		update admin
 		set password_admin = md5(passwordBaru)
 		where username_admin = usernameAdmin;
-		insert into aktivitas(catatan_aktivitas, username_aktivitas)
-		values(concat(usernameAdmin,' mengganti password'), usernameAdmin);
+		insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+		values(concat(usernameAdmin,' mengganti password'), usernameAdmin, current_timestamp());
 		select 'Password berhasil diganti' as message;
 	else
 		select 'Password salah' as message;
-		INSERT INTO aktivitas(catatan_aktivitas, username_aktivitas)
-		VALUES(concat(usernameAdmin,' gagal mengganti password'), usernameAdmin);
+		INSERT INTO aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+		VALUES(concat(usernameAdmin,' gagal mengganti password'), usernameAdmin, current_timestamp());
 	end if;
 	commit;
     END */$$
 DELIMITER ;
 
-/* Procedure structure for procedure `getListDosen` */
+/* Procedure structure for procedure `gantiPasswordDosen` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `getListDosen` */;
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `gantiPasswordDosen`(passwordLama varchar(100), passwordBaru varchar(100), nidnDosen varchar(100))
+BEGIN
+	START TRANSACTION;
+	SET @pass = (SELECT password_dosen FROM dosen WHERE nidnDosen=NIDN_dosen);
+	IF(@pass = MD5(passwordLama))
+	THEN
+		UPDATE dosen
+		SET password_dosen = MD5(passwordBaru)
+		WHERE NIDN_dosen = nidnDosen;
+		SELECT 'Password berhasil diganti' AS message;
+	ELSE
+		SELECT 'Password salah' AS message;
+	END IF;
+	COMMIT;
+    END */$$
+DELIMITER ;
+
+/* Procedure structure for procedure `getListDosen` */
 
 DELIMITER $$
 
@@ -348,8 +408,6 @@ DELIMITER ;
 
 /* Procedure structure for procedure `hapusPeminjaman` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `hapusPeminjaman` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `hapusPeminjaman`(kodePinjam varchar(17), userAdmin varchar(100))
@@ -360,33 +418,29 @@ BEGIN
 	update daftar_permohonan
 	set status_permohonan = 'Dihapus'
 	where kode_permohonan=kodePinjam;
-	insert into aktivitas(catatan_aktivitas, username_aktivitas)
-	value(concat('Admin ',userAdmin,' menghapus jadwal dengan kode ',kodePinjam),userAdmin);
+	insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	value(concat('Admin ',userAdmin,' menghapus jadwal dengan kode ',kodePinjam),userAdmin, current_timestamp());
 	commit;
     END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `isiAgenda` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `isiAgenda` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `isiAgenda`(isiAgenda varchar(300), tanggalMulai date, usernameAdmin varchar(20), tanggalSelesai date)
 BEGIN
     start transaction;
-	insert into agenda (isi_agenda, tanggal_mulai_agenda, admin, tanggal_selesai_agenda)
-	values (isiAgenda, tanggalMulai, usernameAdmin, tanggalSelesai);
-	insert into aktivitas(catatan_aktivitas, username_aktivitas)
-	values (concat(usernameAdmin, ' mengisi agenda'), usernameAdmin);
+	insert into agenda (isi_agenda, tanggal_mulai_agenda, admin, tanggal_selesai_agenda, timestamp_agenda)
+	values (isiAgenda, tanggalMulai, usernameAdmin, tanggalSelesai, current_timestamp());
+	insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	values (concat(usernameAdmin, ' mengisi agenda'), usernameAdmin, current_timestamp());
 	select 'Pengisian agenda telah berasil' as 'Pesan';
 	commit;
     END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `isiPemohon` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `isiPemohon` */;
 
 DELIMITER $$
 
@@ -406,11 +460,9 @@ DELIMITER ;
 
 /* Procedure structure for procedure `isiPermohonan` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `isiPermohonan` */;
-
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `isiPermohonan`(namaPemohon varchar(30),
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `isiPermohonan`(namaPemohon varchar(100),
 						namaKegiatan varchar(160),
 						tanggalMulai date,
 						waktuMulai time,
@@ -459,7 +511,8 @@ BEGIN
 						badan_pelaksana_kegiatan,
 						nama_ruangan,
 						rutinitas_peminjaman,
-						kali_peminjaman)
+						kali_peminjaman,
+						tanggal_masuk_permohonan)
 				values (namaPemohon,
 					@uid,
 					namaKegiatan,
@@ -469,7 +522,8 @@ BEGIN
 					badanPelaksana,
 					namaRuangan,
 					rutinitas,
-					kaliPinjam);
+					kaliPinjam,
+					current_timestamp);
 		select 1 as 'pesan', @uid as 'Kode_Pemesanan';
 	else
 		select 0 as 'pesan';
@@ -480,19 +534,15 @@ DELIMITER ;
 
 /* Procedure structure for procedure `lihatAgenda` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `lihatAgenda` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `lihatAgenda`()
 BEGIN
-	select isi_agenda, tanggal_mulai_agenda, tanggal_selesai_agenda from agenda where tanggal_mulai_agenda > now() order by tanggal_mulai_agenda ASC limit 5;
+	select isi_agenda, tanggal_mulai_agenda, tanggal_selesai_agenda from agenda where tanggal_mulai_agenda >= curdate() order by tanggal_mulai_agenda ASC limit 5;
     END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `lihatKegiatanBerikut` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `lihatKegiatanBerikut` */;
 
 DELIMITER $$
 
@@ -509,8 +559,6 @@ DELIMITER ;
 
 /* Procedure structure for procedure `lihatKegiatanSekarang` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `lihatKegiatanSekarang` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `lihatKegiatanSekarang`(namaRuangan varchar(100))
@@ -525,8 +573,6 @@ BEGIN
 DELIMITER ;
 
 /* Procedure structure for procedure `loginAdmin` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `loginAdmin` */;
 
 DELIMITER $$
 
@@ -543,8 +589,6 @@ DELIMITER ;
 
 /* Procedure structure for procedure `loginDosen` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `loginDosen` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `loginDosen`(nidn varchar(10), pass varchar(32))
@@ -560,11 +604,9 @@ DELIMITER ;
 
 /* Procedure structure for procedure `setujuiPermohonan` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `setujuiPermohonan` */;
-
 DELIMITER $$
 
-/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `setujuiPermohonan`(	kodePermohonan varchar(17),
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `setujuiPermohonan`(kodePermohonan varchar(17),
 							userAdmin varchar(20))
 BEGIN
 	set @tanggalMulaiKegiatan = (select tanggal_mulai_permohonan_peminjaman from daftar_permohonan where kode_permohonan=kodePermohonan);
@@ -620,8 +662,8 @@ BEGIN
 		insert into admin_permohonan(username_admin_antara, kode_permohonan_antara)
 		values(userAdmin, kodePermohonan);
 		
-		insert into aktivitas (catatan_aktivitas, username_aktivitas)
-		values (concat(userAdmin,' menyetujui permohonan dengan kode ', kodePermohonan), userAdmin);
+		insert into aktivitas (catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+		values (concat(userAdmin,' menyetujui permohonan dengan kode ', kodePermohonan), userAdmin, CURRENT_TIMESTAMP());
 		
 		select 'Permohonan pemesanan telah disetujui.' as 'pesan', 1 as 'status';
 	else
@@ -633,15 +675,13 @@ DELIMITER ;
 
 /* Procedure structure for procedure `tambahDosen` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `tambahDosen` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `tambahDosen`(namaDosen varchar(60), nidnDosen varchar(10), passwordDosen varchar(32), usernameAdmin varchar(30))
 BEGIN
 	start transaction;
-	INSERT INTO aktivitas(catatan_aktivitas, username_aktivitas)
-	VALUES (CONCAT(usernameAdmin, ' menambah ', namaDosen), usernameAdmin);
+	INSERT INTO aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	VALUES (CONCAT(usernameAdmin, ' menambah ', namaDosen), usernameAdmin, current_timestamp());
 	insert into dosen(nama_dosen, NIDN_dosen, password_dosen)
 	values(namaDosen, nidnDosen, md5(passwordDosen));
 	commit;
@@ -649,8 +689,6 @@ BEGIN
 DELIMITER ;
 
 /* Procedure structure for procedure `tambahRuangan` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `tambahRuangan` */;
 
 DELIMITER $$
 
@@ -669,8 +707,6 @@ DELIMITER ;
 
 /* Procedure structure for procedure `tambahRutinitas` */
 
-/*!50003 DROP PROCEDURE IF EXISTS  `tambahRutinitas` */;
-
 DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `tambahRutinitas`(frekwensi int, keterangan varchar(15), adminName varchar(20))
@@ -680,15 +716,13 @@ BEGIN
 	values (frekwensi, keterangan)
 	on duplicate key update keterangan_rutinitas=keterangan;
 	
-	insert into aktivitas (catatan_aktivitas, username_aktivitas)
-	values (concat(adminName, ' menambahkan frekwensi rutinitas baru'), adminName);
+	insert into aktivitas (catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	values (concat(adminName, ' menambahkan frekwensi rutinitas baru'), adminName, current_timestamp());
 	commit;
     END */$$
 DELIMITER ;
 
 /* Procedure structure for procedure `tolakPermohonan` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `tolakPermohonan` */;
 
 DELIMITER $$
 
@@ -699,8 +733,8 @@ BEGIN
 	set status_permohonan = 'Ditolak'
 	where kode_permohonan = kodePermohonan;
 	
-	insert into aktivitas(catatan_aktivitas, username_aktivitas)
-	values(concat(userAdmin, ' menolak permohonan dengan kode ', kodePermohonan), userAdmin);
+	insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+	values(concat(userAdmin, ' menolak permohonan dengan kode ', kodePermohonan), userAdmin, current_timestamp());
 	
 	insert into admin_permohonan(username_admin_antara, kode_permohonan_antara)
 	values(userAdmin, kodePermohonan);
@@ -710,8 +744,6 @@ BEGIN
 DELIMITER ;
 
 /* Procedure structure for procedure `updatePeminjaman` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `updatePeminjaman` */;
 
 DELIMITER $$
 
@@ -785,8 +817,8 @@ BEGIN
 			set @iter=@iter+1;
 			SET @tanggal = DATE_ADD(@tanggal, INTERVAL rutinitas DAY);
 		end while;
-		insert into aktivitas(catatan_aktivitas, username_aktivitas)
-		value(concat(userAdmin,' mengubah peminjaman ', kodePermohonan), userAdmin);
+		insert into aktivitas(catatan_aktivitas, username_aktivitas, waktu_aktivitas)
+		value(concat(userAdmin,' mengubah peminjaman ', kodePermohonan), userAdmin, current_timestamp());
 		
 		select 1 as 'pesan';
 		commit;
@@ -798,8 +830,6 @@ BEGIN
 DELIMITER ;
 
 /* Procedure structure for procedure `updateStatus` */
-
-/*!50003 DROP PROCEDURE IF EXISTS  `updateStatus` */;
 
 DELIMITER $$
 
