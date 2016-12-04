@@ -31,13 +31,20 @@ class dosenController extends Controller
         session::flash('hasil', $pesan[0]->message);
         return redirect()->back();
     }
+    public function isiRutin(Request $request)
+    {
+        DB::select('insert into kegiatan_rutin(nidn_dosen, hari_rutin, kegiatan_rutin, waktu_rutin) values(?,?,?,?)', array($request->session()->get('nidn_dosen'), $request['hari'], $request['kegiatan'], $request['jam']));
+        return redirect()->back();
+    }
     public function tambahjadwaldosen(){
         return view('tambahjadwaldosen');
     }
-    public function listjadwaldosen(){
-        return view('listjadwaldosen');
+    public function listjadwaldosen(Request $request){
+        $hasil=DB::select('select * from kegiatan_rutin where NIDN_dosen = ?;', array($request->session()->get('nidn_dosen')));
+        return view('listjadwaldosen', ['hasil'=>$hasil]);
     }
-    public function editjadwaldosen(){
-        return view('editjadwaldosen');
+    public function editjadwaldosen($hari, $jam, Request $request){
+        $hasil=DB::select('select * from kegiatan_rutin where NIDN_dosen =? and hari_rutin = ? and waktu_rutin = ?', array($request->session()->get('nidn_dosen'), $hari, $jam));
+        return view('editjadwaldosen', ['hasil'=>$hasil]);
     }
 }

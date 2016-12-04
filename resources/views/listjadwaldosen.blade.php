@@ -32,7 +32,7 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Tanggal</th>
+                                        <th>Hari</th>
                                         <th>Waktu</th>
                                         <th>Kegiatan</th>
                                         <th>Sunting</th>
@@ -40,15 +40,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                  
+                                @foreach($hasil as $isi)
                                     <tr>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td><a href="editjadwaldosen"><button type="button" class="btn btn-sm btn-info">Sunting</button></a></td>
+                                        <td>{{$isi->hari_rutin}}</td>
+                                        <td>{{$isi->waktu_rutin}}</td>
+                                        <td>{{$isi->kegiatan_rutin}}</td>
+                                        <td><a href="/dosen/editjadwaldosen/{{$isi->hari_rutin}}/{{$isi->waktu_rutin}}"><button type="button" class="btn btn-sm btn-info">Sunting</button></a></td>
                                         <td><a href=""><button type="button" class="btn btn-sm btn-danger">Hapus</button></a></td>
                                     </tr>
-                                
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>

@@ -29,17 +29,25 @@
                 <div class="row">
                     <div class="well">
                         <form role="form" action="post" method="POST">
-                            <h4>Tanggal:</h4>
-                            <div class="form-group">
-                                <input name='status_baru' type='date' class="form-control">
+                            <h4>Hari</h4>
+                            <div class="form-group" selected="{{$hasil[0]->hari_rutin}}">
+                                <select name='hari' class="form-control">
+                                <option>Senin</option>
+                                <option>Selasa</option>
+                                <option>Rabu</option>
+                                <option>Kamis</option>
+                                <option>Jumat</option>
+                                <option>Sabtu</option>
+                                <option>Minggu</option>
+                            </select>
                             </div>
                             <h4>Waktu:</h4>
                             <div class="form-group">
-                                <input name='status_baru' type='time' class="form-control">
+                                <input name='waktu' type='time' class="form-control" value="{{$hasil[0]->waktu_rutin}}">
                             </div>
                             <h4>Kegiatan</h4>
                             <div class="form-group">
-                                <textarea name="isi" type='text' class="form-control"></textarea>
+                                <textarea name="kegiatan" type='text' class="form-control">{{$hasil[0]->kegiatan_rutin}}</textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Ubah</button>
                         </form>

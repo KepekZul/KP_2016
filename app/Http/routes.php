@@ -53,9 +53,9 @@ Route::post('/dosen/post', 'dosenController@post')->middleware('dosen');
 Route::get('/dosen/password', 'dosenController@gantipassword')->middleware('dosen');
 Route::get('/dosen/tambahjadwaldosen', 'dosenController@tambahjadwaldosen')->middleware('dosen');
 Route::get('/dosen/listjadwaldosen', 'dosenController@listjadwaldosen')->middleware('dosen');
-Route::get('/dosen/editjadwaldosen', 'dosenController@editjadwaldosen')->middleware('dosen');
+Route::get('/dosen/editjadwaldosen/{hari}/{jam}', 'dosenController@editjadwaldosen')->middleware('dosen');
 Route::post('/dosen/gantipass', 'dosenController@gantipass')->middleware('dosen');
-
+Route::post('/dosen/isirutin', 'dosenController@isiRutin')->middleware('dosen');
 
 //umum
 Route::get('/index', 'umumController@index');

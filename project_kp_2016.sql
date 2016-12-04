@@ -142,18 +142,20 @@ CREATE TABLE `dosen` (
 
 insert  into `dosen`(`nama_dosen`,`NIDN_dosen`,`status_terkini`,`pengumuman_terkini`,`password_dosen`) values ('ayu','5113100072','di ruangan','-','2e3817293fc275dbee74bd71ce6eb056');
 
-/*Table structure for table `kegiatan_rutn` */
+/*Table structure for table `kegiatan_rutin` */
 
-CREATE TABLE `kegiatan_rutn` (
-  `NIDN_dosen` varchar(10) DEFAULT NULL,
-  `hari_rutin` varchar(12) DEFAULT NULL,
+CREATE TABLE `kegiatan_rutin` (
+  `NIDN_dosen` varchar(10) NOT NULL,
+  `hari_rutin` varchar(12) NOT NULL,
   `kegiatan_rutin` varchar(300) DEFAULT NULL,
-  `waktu_rutin` time DEFAULT NULL,
-  KEY `FK_kegiatan_rutn` (`NIDN_dosen`),
+  `waktu_rutin` time NOT NULL,
+  PRIMARY KEY (`NIDN_dosen`,`hari_rutin`,`waktu_rutin`),
   CONSTRAINT `FK_kegiatan_rutn` FOREIGN KEY (`NIDN_dosen`) REFERENCES `dosen` (`NIDN_dosen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-/*Data for the table `kegiatan_rutn` */
+/*Data for the table `kegiatan_rutin` */
+
+insert  into `kegiatan_rutin`(`NIDN_dosen`,`hari_rutin`,`kegiatan_rutin`,`waktu_rutin`) values ('5113100072','Senin','PaaF','07:00:00');
 
 /*Table structure for table `pemohon` */
 
@@ -538,7 +540,7 @@ DELIMITER $$
 
 /*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `lihatAgenda`()
 BEGIN
-	select isi_agenda, tanggal_mulai_agenda, tanggal_selesai_agenda from agenda where tanggal_mulai_agenda >= curdate() order by tanggal_mulai_agenda ASC limit 5;
+	select isi_agenda, tanggal_mulai_agenda, tanggal_selesai_agenda from agenda where tanggal_selesai_agenda >= curdate() order by tanggal_mulai_agenda ASC limit 5;
     END */$$
 DELIMITER ;
 

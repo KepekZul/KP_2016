@@ -28,10 +28,10 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="well">
-                        <form role="form" action="post" method="POST">
+                        <form role="form" action="/dosen/isirutin" method="POST">
                             <h4>Hari</h4>
                     <div class="input-group">
-                        <select name="ruangan" class="form-control">
+                        <select name="hari" class="form-control">
                                     <option>Senin</option>
                                     <option>Selasa</option>
                                     <option>Rabu</option>
@@ -43,11 +43,11 @@
                             </div>
                             <h4>Waktu:</h4>
                             <div class="form-group">
-                                <input name='status_baru' type='time' class="form-control">
+                                <input name='jam' type='time' class="form-control">
                             </div>
                             <h4>Kegiatan</h4>
                             <div class="form-group">
-                                <textarea name="isi" type='text' class="form-control"></textarea>
+                                <textarea name="kegiatan" type='text' class="form-control"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Tambah</button>
                         </form>
