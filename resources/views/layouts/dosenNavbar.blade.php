@@ -19,19 +19,19 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li id="index">
-                        <a href="index">Beranda</a>
+                        <a href="/dosen/index">Beranda</a>
                     </li>
                     <li id="status">
-                        <a href="status">Post Status Dosen</a>
+                        <a href="/dosen/status">Post Status Dosen</a>
                     </li>
                     <li id="tambah">
-                        <a href="tambahjadwaldosen">Tambah Jadwal Rutin Dosen</a>
+                        <a href="/dosen/tambahjadwaldosen">Tambah Jadwal Rutin Dosen</a>
                     </li>
                     <li id="edit">
-                        <a href="listjadwaldosen">Edit Jadwal Rutin Dosen</a>
+                        <a href="/dosen/listjadwaldosen">Edit Jadwal Rutin Dosen</a>
                     </li>
                     <li id="password">
-                        <a href="password">Ganti Password</a>
+                        <a href="/dosen/password">Ganti Password</a>
                     </li>
                 </ul>
             </div>

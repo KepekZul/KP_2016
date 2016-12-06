@@ -64,15 +64,16 @@
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Tanggal</th>
+                                        <th>Hari</th>
                                         <th>Waktu</th>
                                         <th>Kegiatan</th>
                                     </tr>
                                 </thead>
                                 <tbody id="daftar">
                                     <tr>
-                                        <td>kosong</td>
-                                        <td>kosong</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
                                     </tr>
                                 </tbody>
                             </table>

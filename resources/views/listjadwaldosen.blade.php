@@ -45,8 +45,8 @@
                                         <td>{{$isi->hari_rutin}}</td>
                                         <td>{{$isi->waktu_rutin}}</td>
                                         <td>{{$isi->kegiatan_rutin}}</td>
-                                        <td><a href="/dosen/editjadwaldosen/{{$isi->hari_rutin}}/{{$isi->waktu_rutin}}"><button type="button" class="btn btn-sm btn-info">Sunting</button></a></td>
-                                        <td><a href=""><button type="button" class="btn btn-sm btn-danger">Hapus</button></a></td>
+                                        <td><a href="/dosen/editjadwaldosen/{{$isi->id_rutin}}"><button type="button" class="btn btn-sm btn-info">Sunting</button></a></td>
+                                        <td><a href="/dosen/hapusrutin/{{$isi->id_rutin}}"><button type="button" class="btn btn-sm btn-danger">Hapus</button></a></td>
                                     </tr>
                                 @endforeach
                                 </tbody>

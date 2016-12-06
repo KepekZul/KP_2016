@@ -43,8 +43,18 @@ class dosenController extends Controller
         $hasil=DB::select('select * from kegiatan_rutin where NIDN_dosen = ?;', array($request->session()->get('nidn_dosen')));
         return view('listjadwaldosen', ['hasil'=>$hasil]);
     }
-    public function editjadwaldosen($hari, $jam, Request $request){
-        $hasil=DB::select('select * from kegiatan_rutin where NIDN_dosen =? and hari_rutin = ? and waktu_rutin = ?', array($request->session()->get('nidn_dosen'), $hari, $jam));
+    public function editjadwaldosen($id, Request $request){
+        $hasil=DB::select('select * from kegiatan_rutin where NIDN_dosen =? and id_rutin=?', array($request->session()->get('nidn_dosen'), $id));
         return view('editjadwaldosen', ['hasil'=>$hasil]);
+    }
+    public function editRutin(Request $request)
+    {
+        DB::select('update kegiatan_rutin set kegiatan_rutin = ?, waktu_rutin=?, hari_rutin=? where id_rutin =?', array($request['kegiatan'], $request['waktu'], $request['hari'], $request['id']));
+        return redirect('/dosen');
+    }
+    public function hapusRutin($id)
+    {
+        DB::select('delete from kegiatan_rutin where id_rutin =?', array($id));
+        return redirect()->back();
     }
 }

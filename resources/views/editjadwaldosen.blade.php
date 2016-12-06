@@ -28,7 +28,7 @@
                 <!-- /.row -->
                 <div class="row">
                     <div class="well">
-                        <form role="form" action="post" method="POST">
+                        <form role="form" action="/dosen/editrutin" method="POST">
                             <h4>Hari</h4>
                             <div class="form-group" selected="{{$hasil[0]->hari_rutin}}">
                                 <select name='hari' class="form-control">
@@ -42,8 +42,9 @@
                             </select>
                             </div>
                             <h4>Waktu:</h4>
+                            <input name="id" value="{{$hasil[0]->id_rutin}}" type="hidden">
                             <div class="form-group">
-                                <input name='waktu' type='time' class="form-control" value="{{$hasil[0]->waktu_rutin}}">
+                                <input name='waktu' type='jam' class="form-control" value="{{$hasil[0]->waktu_rutin}}">
                             </div>
                             <h4>Kegiatan</h4>
                             <div class="form-group">
