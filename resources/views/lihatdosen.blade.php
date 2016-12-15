@@ -106,6 +106,27 @@
             };
             xhttp.open("get", "/lihatdosen/data/"+document.getElementById("kunci").value, true);
             xhttp.send();
+
+            var xhttp2 = new XMLHttpRequest();
+            xhttp2.onreadystatechange=function(){
+                if(xhttp2.readyState==4 && xhttp2.status==200){
+                    $all2 = JSON.parse(xhttp2.responseText);
+                    $isiHTML2="";
+                    var cont2 = Object.keys($all2["rutindosen"]).length;
+                    console.log(cont2);
+                    for(j=0; j<cont2; j++){
+                        $data2 = $all2["rutindosen"][j];
+                        $Hari=$data2['hari_rutin'];
+                        $Waktu=$data2['waktu_rutin'];
+                        $kegiatan=$data2['kegiatan_rutin'];
+                        $isiHTML2=$isiHTML2+"<tr><td>"+$Hari+"</td><td>"+$Waktu+"</td><td>"+$kegiatan+"</td></tr>";
+                    }
+                    console.log($isiHTML2);
+                    document.getElementById("daftar").innerHTML=$isiHTML2;
+                }
+            };
+            xhttp2.open("get", "/lihatdosen/rutin/"+document.getElementById("kunci").value, true);
+            xhttp2.send();
         };
         </script>
         <!-- Footer -->

@@ -31,16 +31,17 @@
                         <form role="form" action="/dosen/isirutin" method="POST">
                             <h4>Hari</h4>
                     <div class="input-group">
-                        <select name="hari" class="form-control">
-                                    <option>Senin</option>
-                                    <option>Selasa</option>
-                                    <option>Rabu</option>
-                                    <option>Kamis</option>
-                                    <option>Jumat</option>
-                                    <option>Sabtu</option>
-                                    <option>Minggu</option>
+                        <select name="hari_angka" class="form-control" onchange="document.getElementById('hari_nama').value=this.options[this.selectedIndex].text">
+                                    <option value='1'>Senin</option>
+                                    <option value='2'>Selasa</option>
+                                    <option value='3'>Rabu</option>
+                                    <option value='4'>Kamis</option>
+                                    <option value='5'>Jumat</option>
+                                    <option value='6'>Sabtu</option>
+                                    <option value='7'>Minggu</option>
                                 </select>
                             </div>
+                            <input type="hidden" name='hari_nama' id='hari_nama' value='Senin'>
                             <h4>Waktu:</h4>
                             <div class="form-group">
                                 <input name='jam' type='time' class="form-control">

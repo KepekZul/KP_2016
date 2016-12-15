@@ -48,6 +48,10 @@ class umumController extends Controller
         $data = DB::select('call getListDosen(?)', array($kunci));
         return response()->json(['dataDosen'=>$data]);
     }
+    function data2($kunci){
+        $data = DB::select('SELECT * FROM kegiatan_rutin WHERE nidn_dosen = (SELECT nidn_dosen FROM dosen WHERE nidn_dosen =? OR nama_dosen=?) ORDER BY hari_angka_rutin ASC, waktu_rutin ASC;', array($kunci, $kunci));
+        return response()->json(['rutindosen'=>$data]);
+    }
     function cekRuangan($ruangan, $tanggal){
         $kegiatan = DB::select('call lihatKegiatan(?,?)', array($ruangan, $tanggal));
         return response()->json(['kegiatan'=>$kegiatan]);

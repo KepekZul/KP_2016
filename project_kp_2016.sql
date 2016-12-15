@@ -145,17 +145,23 @@ insert  into `dosen`(`nama_dosen`,`NIDN_dosen`,`status_terkini`,`pengumuman_terk
 /*Table structure for table `kegiatan_rutin` */
 
 CREATE TABLE `kegiatan_rutin` (
-  `NIDN_dosen` varchar(10) NOT NULL,
-  `hari_rutin` varchar(12) NOT NULL,
+  `nidn_dosen` varchar(10) DEFAULT NULL,
+  `hari_rutin` varchar(10) DEFAULT NULL,
+  `waktu_rutin` time DEFAULT NULL,
   `kegiatan_rutin` varchar(300) DEFAULT NULL,
-  `waktu_rutin` time NOT NULL,
-  PRIMARY KEY (`NIDN_dosen`,`hari_rutin`,`waktu_rutin`),
-  CONSTRAINT `FK_kegiatan_rutn` FOREIGN KEY (`NIDN_dosen`) REFERENCES `dosen` (`NIDN_dosen`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `id_rutin` int(11) NOT NULL AUTO_INCREMENT,
+  `hari_angka_rutin` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_rutin`),
+  KEY `FK_kegiatan_rutin` (`nidn_dosen`),
+  CONSTRAINT `FK_kegiatan_rutin` FOREIGN KEY (`nidn_dosen`) REFERENCES `dosen` (`NIDN_dosen`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `kegiatan_rutin` */
 
-insert  into `kegiatan_rutin`(`NIDN_dosen`,`hari_rutin`,`kegiatan_rutin`,`waktu_rutin`) values ('5113100072','Senin','PaaF','07:00:00');
+insert  into `kegiatan_rutin`(`nidn_dosen`,`hari_rutin`,`waktu_rutin`,`kegiatan_rutin`,`id_rutin`,`hari_angka_rutin`) values ('5113100072','Senin','07:00:00','paa f',1,1);
+insert  into `kegiatan_rutin`(`nidn_dosen`,`hari_rutin`,`waktu_rutin`,`kegiatan_rutin`,`id_rutin`,`hari_angka_rutin`) values ('5113100072','Kamis','08:00:00','ini',3,4);
+insert  into `kegiatan_rutin`(`nidn_dosen`,`hari_rutin`,`waktu_rutin`,`kegiatan_rutin`,`id_rutin`,`hari_angka_rutin`) values ('5113100072','Sabtu','09:00:00','kakak',4,6);
+insert  into `kegiatan_rutin`(`nidn_dosen`,`hari_rutin`,`waktu_rutin`,`kegiatan_rutin`,`id_rutin`,`hari_angka_rutin`) values ('5113100072','Kamis','09:00:00','aduh',5,4);
 
 /*Table structure for table `pemohon` */
 

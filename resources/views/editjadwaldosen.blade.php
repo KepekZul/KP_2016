@@ -5,7 +5,7 @@
 @include('layouts.dosenHead')
    <script type="text/javascript">
         function ini(){
-            document.getElementById("status").className="active";
+            document.getElementById("edit").className="active";
         }
     </script>
 </head>
@@ -31,15 +31,16 @@
                         <form role="form" action="/dosen/editrutin" method="POST">
                             <h4>Hari</h4>
                             <div class="form-group" selected="{{$hasil[0]->hari_rutin}}">
-                                <select name='hari' class="form-control">
-                                <option>Senin</option>
-                                <option>Selasa</option>
-                                <option>Rabu</option>
-                                <option>Kamis</option>
-                                <option>Jumat</option>
-                                <option>Sabtu</option>
-                                <option>Minggu</option>
-                            </select>
+                                <select name="hari_angka" class="form-control" onchange="document.getElementById('hari_nama').value=this.options[this.selectedIndex].text">
+                                    <option value='1'>Senin</option>
+                                    <option value='2'>Selasa</option>
+                                    <option value='3'>Rabu</option>
+                                    <option value='4'>Kamis</option>
+                                    <option value='5'>Jumat</option>
+                                    <option value='6'>Sabtu</option>
+                                    <option value='7'>Minggu</option>
+                                </select>
+                            <input type="hidden" name='hari_nama' id='hari_nama' value='Senin'>
                             </div>
                             <h4>Waktu:</h4>
                             <input name="id" value="{{$hasil[0]->id_rutin}}" type="hidden">

@@ -33,7 +33,7 @@ class dosenController extends Controller
     }
     public function isiRutin(Request $request)
     {
-        DB::select('insert into kegiatan_rutin(nidn_dosen, hari_rutin, kegiatan_rutin, waktu_rutin) values(?,?,?,?)', array($request->session()->get('nidn_dosen'), $request['hari'], $request['kegiatan'], $request['jam']));
+        DB::select('insert into kegiatan_rutin(nidn_dosen, hari_rutin, kegiatan_rutin, waktu_rutin, hari_angka_rutin) values(?,?,?,?,?)', array($request->session()->get('nidn_dosen'), $request['hari_nama'], $request['kegiatan'], $request['jam'], $request['hari_angka']));
         return redirect()->back();
     }
     public function tambahjadwaldosen(){
@@ -49,7 +49,7 @@ class dosenController extends Controller
     }
     public function editRutin(Request $request)
     {
-        DB::select('update kegiatan_rutin set kegiatan_rutin = ?, waktu_rutin=?, hari_rutin=? where id_rutin =?', array($request['kegiatan'], $request['waktu'], $request['hari'], $request['id']));
+        DB::select('update kegiatan_rutin set kegiatan_rutin = ?, waktu_rutin=?, hari_rutin=?, hari_angka_rutin=? where id_rutin =?', array($request['kegiatan'], $request['waktu'], $request['hari_nama'], $request['hari_angka'], $request['id']));
         return redirect('/dosen');
     }
     public function hapusRutin($id)
