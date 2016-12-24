@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+    <script src="https://code.jquery.com/jquery-1.12.3.js"></script>
+    <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    @include('layouts.userHead')
    <script type="text/javascript">
@@ -21,6 +23,14 @@
     }
 }
 }
+   </script>
+
+   <script type="text/javascript">
+    $(document).ready(function() {
+        $('#tableJadwal').DataTable( {
+            "pagingType": "full_numbers"
+        } );
+    } );
    </script>
 </head>
 
